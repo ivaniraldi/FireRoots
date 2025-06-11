@@ -9,6 +9,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { useEffect, useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
 
 const navItems = [
   { label: 'Início', href: '/' },
@@ -61,8 +62,15 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-8">
-        <Link href="/" className="flex items-center gap-2 text-2xl font-headline uppercase transition-transform hover:scale-105">
-          <Flame className="h-7 w-7" style={{ color: '#D73908' }} />
+        <Link href="/" className="flex items-center  text-2xl font-headline uppercase transition-transform hover:scale-105">
+          <Image
+            src="https://i.imgur.com/pqUvJEU.png"
+            alt="Logo da Fireroots"
+            width={50}
+            height={50}
+            className="rounded-full"
+            
+          />
           <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
         </Link>
 

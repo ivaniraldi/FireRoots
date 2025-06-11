@@ -14,7 +14,7 @@ const allProducts: Product[] = [
     id: 'mango-magma',
     name: 'Mango Magma',
     description: 'Nosso carro-chefe: uma combinação ousada de manga doce com a intensidade da Pimenta Scorpion. Perfeito para quem busca sabor e emoção. Artesanal e 100% natural.',
-    image: 'https://placehold.co/600x700.png',
+    image: 'https://i.imgur.com/V2sCa52.pngs',
     price: 24.99,
     heatLevel: 5,
     dataAiHint: 'mango magma molho pimenta natural artesanal',
@@ -58,9 +58,9 @@ const ProductCard = ({ product }: { product: Product }) => {
         <Image
           src={product.image}
           alt={`Garrafa do Molho de Pimenta ${product.name} Artesanal 150ml da Fireroots`}
-          width={600}
-          height={400}
-          className="rounded-t-lg object-cover w-full h-72 md:h-80"
+          width={700}
+          height={500}
+          className="rounded-t-lg object-cover w-full h-90 md:h-90"
           data-ai-hint={product.dataAiHint || "molho pimenta produto"}
         />
         <Badge variant="destructive" className="absolute top-4 right-4 text-sm py-1 px-3 font-headline animate-pulse">NÍVEL INTENSO</Badge>

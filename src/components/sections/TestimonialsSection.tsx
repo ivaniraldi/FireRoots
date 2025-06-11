@@ -76,10 +76,10 @@ const TestimonialsSection = () => {
 
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
-            { src: "https://placehold.co/300x400.png", alt: "Pessoa fazendo careta de surpresa e prazer ao provar molho picante Mango Magma", hint: "rosto surpresa picante comida" },
-            { src: "https://placehold.co/300x400.png", alt: "Pessoa comemorando com os braços para cima após experimentar o Mango Magma da Fireroots", hint: "felicidade comida pimenta" },
-            { src: "https://placehold.co/300x400.png", alt: "Pessoa pensativa e com olhar satisfeito após provar o sabor intenso do molho picante", hint: "sabor intenso comida" },
-            { src: "https://placehold.co/300x400.png", alt: "Pessoa com uma gota de suor escorrendo, mas sorrindo de satisfação após provar o molho Fireroots", hint: "suando fogo pimenta prazer" },
+            { src: "https://i.imgur.com/KARXwjB.png", alt: "Pessoa fazendo careta de surpresa e prazer ao provar molho picante Mango Magma", hint: "rosto surpresa picante comida" },
+            { src: "https://i.imgur.com/kU51qEb.png", alt: "Pessoa comemorando com os braços para cima após experimentar o Mango Magma da Fireroots", hint: "felicidade comida pimenta" },
+            { src: "https://i.imgur.com/GngBdnd.png", alt: "Pessoa pensativa e com olhar satisfeito após provar o sabor intenso do molho picante", hint: "sabor intenso comida" },
+            { src: "https://i.imgur.com/Xfr5LTH.png", alt: "Pessoa com uma gota de suor escorrendo, mas sorrindo de satisfação após provar o molho Fireroots", hint: "suando fogo pimenta prazer" },
           ].map((item, index) => (
             <div key={index} className="rounded-xl overflow-hidden shadow-lg animate-in fade-in zoom-in-90 duration-700" style={{animationDelay: `${(testimonialsToDisplay.length + index) * 150 + 300}ms`}}>
               <Image

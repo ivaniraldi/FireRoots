@@ -13,7 +13,7 @@ const productsList: Product[] = [
     id: 'mango-magma',
     name: 'Mango Magma',
     description: 'Feito com manga natural e pimenta Scorpion. Sem conservantes. Sabor puro, picante e real.',
-    image: 'https://placehold.co/600x700.png',
+    image: 'https://i.imgur.com/V2sCa52.png',
     price: 29.90,
     heatLevel: 5,
     dataAiHint: 'mango chili peppers',
