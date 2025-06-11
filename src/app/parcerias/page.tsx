@@ -13,16 +13,16 @@ import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 
 export const dynamic = 'force-static';
+
 const pageTitle = 'Parcerias Fireroots - Vamos Crescer Juntos!';
 const pageDescription = 'Tem uma ideia de parceria ou quer colaborar com a Fireroots? Entre em contato conosco e vamos explorar oportunidades juntos!';
 
-export function generateMetadata(): Metadata {
-  return {
-    title: pageTitle,
-    description: pageDescription,
-    keywords: 'parceria fireroots, influencer molho de pimenta, marketing de influencia, mango magma, contato comercial, colaboração',
-  };
-}
+// Removida a exportação de metadata pois o componente é "use client"
+// export const metadata: Metadata = {
+//   title: pageTitle,
+//   description: pageDescription,
+//   keywords: 'parceria fireroots, influencer molho de pimenta, marketing de influencia, mango magma, contato comercial, colaboração',
+// };
 
 interface FormData {
   name: string;
@@ -47,6 +47,9 @@ export default function PartnershipsPage() {
   };
 
   useEffect(() => {
+    // Definir o título do documento no cliente, se desejado
+    document.title = pageTitle;
+
     const { name, email, socialHandle, message } = formData;
     if (name.trim() && email.trim() && socialHandle.trim() && message.trim() && email.includes('@')) {
       setIsFormValid(true);
@@ -100,7 +103,7 @@ ${formData.name}
               <span className="text-primary">Vamos Colaborar</span> <span style={{color: 'hsl(var(--custom-gray))'}}>e Crescer Juntos?</span>
             </CardTitle>
             <CardDescription className="font-body text-lg text-muted-foreground mt-2">
-              Se você é influencer, criador de conteúdo, ou representa uma marca com sinergia com a Fireroots, adoraríamos ouvir sua proposta de parceria!
+              {pageDescription}
             </CardDescription>
           </CardHeader>
           <CardContent>
