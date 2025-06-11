@@ -14,8 +14,8 @@ const allProducts: Product[] = [
     id: 'mango-magma',
     name: 'Mango Magma',
     description: 'Nosso carro-chefe: uma combinação ousada de manga doce com a intensidade da Pimenta Scorpion. Perfeito para quem busca sabor e emoção. Artesanal e 100% natural.',
-    image: 'https://i.imgur.com/V2sCa52.pngs',
-    price: 24.99,
+    image: 'https://i.imgur.com/V2sCa52.png', // Corrected a typo here, removed trailing 's'
+    price: 19.90,
     heatLevel: 5,
     dataAiHint: 'mango magma molho pimenta natural artesanal',
     ingredients: [
@@ -63,7 +63,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           className="rounded-t-lg object-cover w-full h-90 md:h-90"
           data-ai-hint={product.dataAiHint || "molho pimenta produto"}
         />
-        <Badge variant="destructive" className="absolute top-4 right-4 text-sm py-1 px-3 font-headline animate-pulse">NÍVEL INTENSO</Badge>
+        <Badge variant="destructive" className="absolute top-4 right-4 text-sm py-1 px-3 font-headline animate-pulse">OFERTA DE LANÇAMENTO</Badge>
       </CardHeader>
       <CardContent className="flex-grow pt-6 px-5 md:px-7 animate-in fade-in slide-in-from-bottom-5 duration-500 delay-100">
         <CardTitle className="font-headline text-3xl md:text-4xl uppercase mb-2">
@@ -155,7 +155,11 @@ const ProductCard = ({ product }: { product: Product }) => {
 
 const ProductsSection = () => {
   return (
-    <section id="produtos" className="py-16 md:py-24 bg-gradient-to-b from-background to-card text-foreground">
+    <section 
+      id="produtos" 
+      className="py-16 md:py-24 text-foreground bg-cover bg-center"
+      style={{ backgroundImage: "url('https://i.imgur.com/cYLl7Oj.gif')" }}
+    >
       <div className="container mx-auto px-4 md:px-8">
         <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl uppercase text-center mb-12 animate-in fade-in slide-in-from-bottom-10 duration-700">
           <span style={{color: 'hsl(var(--secondary))'}}>Conheça o</span> <span className="text-primary">Mango Magma</span>

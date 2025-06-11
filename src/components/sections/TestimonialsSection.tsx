@@ -18,7 +18,6 @@ interface Testimonial {
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   const avatarColors = ['bg-primary/70', 'bg-secondary/70', 'bg-orange-500/70']; 
-  // Gerar índice de cor com base no nome para consistência (simples hash)
   const colorIndex = testimonial.name.length % avatarColors.length;
 
   return (
@@ -88,7 +87,10 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 text-foreground"> {/* Removido bg-background */}
+    <section 
+      className="py-16 md:py-24 text-foreground bg-cover bg-center"
+      style={{ backgroundImage: "url('https://i.imgur.com/cYLl7Oj.gif')" }}
+    >
       <div className="container mx-auto px-4 md:px-8">
         <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl uppercase text-center mb-4 animate-in fade-in slide-in-from-bottom-10 duration-700">
           <span className="text-primary">A Voz da Galera</span> <span style={{color: 'hsl(var(--secondary))'}}>Sobre o Mango Magma</span>
