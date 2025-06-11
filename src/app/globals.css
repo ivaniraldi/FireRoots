@@ -8,43 +8,47 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 10%; /* Deep Black #1A1A1A */
-    --foreground: 0 0% 97%; /* Smoke White #F8F8F8 */
+    --background: 0 0% 10%; /* Preto Profundo #1A1A1A */
+    --foreground: 0 0% 97%; /* Branco Fumaça #F8F8F8 */
 
-    --card: 0 0% 12%; /* Slightly lighter than background */
-    --card-foreground: 0 0% 97%; /* Smoke White */
+    --card: 0 0% 12%; /* Um pouco mais claro que o fundo */
+    --card-foreground: 0 0% 97%; /* Branco Fumaça */
 
     --popover: 0 0% 12%;
     --popover-foreground: 0 0% 97%;
 
-    --primary: 353 70% 50%; /* Lava Red #D72638 */
-    --primary-foreground: 0 0% 97%; /* Smoke White */
+    --primary: 353 70% 50%; /* Vermelho Lava #D72638 */
+    --primary-foreground: 0 0% 97%; /* Branco Fumaça */
 
-    --secondary: 353 70% 30%; /* Darker Lava Red */
-    --secondary-foreground: 0 0% 97%; /* Smoke White */
+    --secondary: 43 98% 58%; /* Amarelo Manga #FDBA2D - Invertido com Accent para mais destaque amarelo */
+    --secondary-foreground: 0 0% 10%; /* Preto Profundo para texto sobre amarelo */
 
-    --muted: 0 0% 25%; /* Dark Gray */
-    --muted-foreground: 0 0% 60%; /* Lighter Gray */
+    --muted: 0 0% 25%; /* Cinza Escuro */
+    --muted-foreground: 0 0% 60%; /* Cinza Mais Claro */
 
-    --accent: 43 98% 58%; /* Mango Yellow #FDBA2D */
-    --accent-foreground: 0 0% 10%; /* Deep Black for text on accent */
+    --accent: 353 70% 50%; /* Vermelho Lava #D72638 - Invertido com Secondary */
+    --accent-foreground: 0 0% 97%; /* Branco Fumaça */
+    
+    /* Definindo uma nova variável para o cinza específico #C2BDC0 */
+    --custom-gray: 0 0% 75.3%; /* Cinza #C2BDC0 */
 
-    --destructive: 0 84.2% 60.2%; /* Default destructive red */
+
+    --destructive: 0 84.2% 60.2%; /* Vermelho destrutivo padrão */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%; /* Subtle border for dark theme */
+    --border: 0 0% 20%; /* Borda sutil para tema escuro */
     --input: 0 0% 20%;
-    --ring: 43 98% 58%; /* Mango Yellow for focus rings */
+    --ring: 43 98% 58%; /* Amarelo Manga para anéis de foco */
 
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-1: 353 70% 50%; /* Vermelho Lava */
+    --chart-2: 43 98% 58%; /* Amarelo Manga */
+    --chart-3: 0 0% 75.3%; /* Cinza Customizado */
+    --chart-4: 353 70% 30%; /* Vermelho Lava Escuro */
+    --chart-5: 43 98% 40%; /* Amarelo Manga Escuro */
     
     --radius: 0.5rem;
 
-    /* Sidebar variables adjusted for consistency, though not used in landing page */
+    /* Variáveis do Sidebar ajustadas para consistência */
     --sidebar-background: 0 0% 8%; 
     --sidebar-foreground: 0 0% 90%;
     --sidebar-primary: 353 70% 50%; 
@@ -56,7 +60,7 @@ body {
   }
 
   .dark {
-    /* Dark mode can refine specifics if needed, but :root is already dark */
+    /* Dark mode pode refinar específicos se necessário, mas :root já é escuro */
     --background: 0 0% 10%;
     --foreground: 0 0% 97%;
 
@@ -69,27 +73,29 @@ body {
     --primary: 353 70% 50%;
     --primary-foreground: 0 0% 97%;
 
-    --secondary: 353 70% 30%;
-    --secondary-foreground: 0 0% 97%;
+    --secondary: 43 98% 58%;
+    --secondary-foreground: 0 0% 10%;
 
     --muted: 0 0% 25%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 43 98% 58%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 353 70% 50%;
+    --accent-foreground: 0 0% 97%;
+    
+    --custom-gray: 0 0% 75.3%;
 
-    --destructive: 0 70% 55%; /* Slightly adjusted destructive for dark */
+    --destructive: 0 70% 55%; /* Destrutivo levemente ajustado para escuro */
     --destructive-foreground: 0 0% 97%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 43 98% 58%;
     
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --chart-1: 353 70% 50%;
+    --chart-2: 43 98% 58%;
+    --chart-3: 0 0% 75.3%;
+    --chart-4: 353 70% 30%;
+    --chart-5: 43 98% 40%;
 
     --sidebar-background: 0 0% 8%; 
     --sidebar-foreground: 0 0% 90%;

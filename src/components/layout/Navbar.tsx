@@ -12,8 +12,8 @@ import { Badge } from '@/components/ui/badge';
 
 const navItems = [
   { label: 'Início', href: '/' },
-  { label: 'O Molho', href: '/#produtos' }, // Alterado de Produtos para O Molho
-  { label: 'Sobre', href: '/#sobre-marca' },
+  { label: 'O Molho', href: '/#produtos' },
+  { label: 'A Marca', href: '/#sobre-marca' },
   { label: 'Contato', href: '/#contato' },
 ];
 
@@ -30,9 +30,9 @@ const Navbar = () => {
     return (
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-8">
-          <Link href="/" className="flex items-center gap-2 text-2xl font-headline uppercase text-primary">
-            <Flame className="h-7 w-7" />
-            Fireroots
+          <Link href="/" className="flex items-center gap-2 text-2xl font-headline uppercase">
+            <Flame className="h-7 w-7" style={{ color: '#D73908' }} />
+            <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: '#C2BDC0' }}>roots</span>
           </Link>
         </div>
       </header>
@@ -45,7 +45,7 @@ const Navbar = () => {
         key={item.label}
         variant="ghost"
         asChild
-        className={`font-body text-sm ${isSheet ? 'w-full justify-start' : ''} hover:bg-accent/50 hover:text-accent-foreground`}
+        className={`font-body text-sm font-medium ${isSheet ? 'w-full justify-start py-3 text-base' : 'hover:bg-secondary/80 hover:text-secondary-foreground'}`}
       >
         <Link href={item.href}>
           {item.label}
@@ -56,14 +56,14 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-8">
-        <Link href="/" className="flex items-center gap-2 text-2xl font-headline uppercase text-primary transition-transform hover:scale-105">
-          <Flame className="h-7 w-7" />
-          Fireroots
+        <Link href="/" className="flex items-center gap-2 text-2xl font-headline uppercase transition-transform hover:scale-105">
+          <Flame className="h-7 w-7" style={{ color: '#D73908' }} />
+          <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: '#C2BDC0' }}>roots</span>
         </Link>
 
         {isMobile ? (
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" asChild className="relative">
+            <Button variant="ghost" size="icon" asChild className="relative hover:bg-secondary/80 hover:text-secondary-foreground">
               <Link href="/carrinho" aria-label="Carrinho de compras">
                 <ShoppingCart className="h-6 w-6" />
                 {totalItems > 0 && (
@@ -75,13 +75,17 @@ const Navbar = () => {
             </Button>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className="hover:bg-secondary/80 hover:text-secondary-foreground">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Abrir menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] bg-background p-6">
-                <nav className="flex flex-col gap-4 mt-8">
+              <SheetContent side="right" className="w-[280px] bg-card p-6">
+                 <Link href="/" className="flex items-center gap-2 text-2xl font-headline uppercase mb-8">
+                    <Flame className="h-7 w-7" style={{ color: '#D73908' }} />
+                    <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: '#C2BDC0' }}>roots</span>
+                </Link>
+                <nav className="flex flex-col gap-3">
                   {renderNavLinks(true)}
                 </nav>
               </SheetContent>
@@ -90,7 +94,7 @@ const Navbar = () => {
         ) : (
           <nav className="hidden md:flex items-center gap-1">
             {renderNavLinks()}
-            <Button variant="ghost" size="icon" asChild className="relative hover:bg-accent/50 hover:text-accent-foreground">
+            <Button variant="ghost" size="icon" asChild className="relative hover:bg-secondary/80 hover:text-secondary-foreground">
               <Link href="/carrinho" aria-label="Carrinho de compras">
                 <ShoppingCart className="h-5 w-5" />
                 {totalItems > 0 && (
