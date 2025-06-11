@@ -12,7 +12,7 @@ body {
   :root {
     --background: 0 0% 10%; /* Preto Profundo #1A1A1A */
     --background-start: 0 0% 10%; /* Início do gradiente */
-    --background-end: 0 0% 15%; /* Fim do gradiente - Cinza carvão escuro sutil */
+    --background-end: 0 0% 20%; /* Fim do gradiente - Cinza carvão um pouco mais claro */
 
     --foreground: 0 0% 97%; /* Branco Fumaça #F8F8F8 */
 
@@ -67,7 +67,7 @@ body {
     /* Dark mode pode refinar específicos se necessário, mas :root já é escuro */
     --background: 0 0% 10%;
     --background-start: 0 0% 10%;
-    --background-end: 0 0% 15%; /* cinza carvão escuro sutil */
+    --background-end: 0 0% 20%; /* cinza carvão um pouco mais claro */
     
     --foreground: 0 0% 97%;
 
