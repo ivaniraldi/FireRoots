@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Instagram } from 'lucide-react';
 import TikTokIcon from '@/components/icons/TikTokIcon';
@@ -17,10 +18,9 @@ const Footer = () => {
           <div>
             <h4 className="font-headline text-lg uppercase text-foreground mb-3">Links Úteis</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/#produto" className="hover:text-primary transition-colors">Produto</Link></li>
+              <li><Link href="/#produtos" className="hover:text-primary transition-colors">Produtos</Link></li>
               <li><Link href="/#sobre-marca" className="hover:text-primary transition-colors">Sobre Nós</Link></li>
-              <li><Link href="#" className="text-muted-foreground cursor-not-allowed">Loja (em breve)</Link></li>
-              <li><Link href="#" className="text-muted-foreground cursor-not-allowed">Blog (em breve)</Link></li>
+              <li><Link href="/carrinho" className="hover:text-primary transition-colors">Carrinho</Link></li>
               <li><Link href="/politica-de-privacidade" className="hover:text-primary transition-colors">Política de Privacidade</Link></li>
             </ul>
           </div>

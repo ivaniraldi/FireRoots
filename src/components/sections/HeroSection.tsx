@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -35,14 +36,14 @@ const HeroSection = () => {
           Sabor tropical. Fogo real.
         </h1>
         <p className="font-body text-lg md:text-xl text-foreground max-w-xl mb-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400">
-          Molho artesanal de manga com pimenta Scorpion. Para quem tem coragem.
+          Molhos artesanais com ingredientes selecionados. Para quem tem coragem.
         </p>
         <Button 
           size="lg" 
           className="font-headline uppercase text-lg py-6 px-10 bg-primary text-primary-foreground hover:bg-primary/90 transform transition-transform hover:scale-105 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600"
           asChild
         >
-          <Link href="/#loja">Pedir agora</Link>
+          <Link href="/#produtos">Conheça os molhos</Link>
         </Button>
       </div>
     </section>

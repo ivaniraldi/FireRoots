@@ -33,7 +33,7 @@ const productsList: Product[] = [
     description: 'A doçura exótica da goiaba encontra o calor assombroso da pimenta Ghost Pepper. Para os corajosos.',
     image: 'https://placehold.co/600x700.png',
     price: 32.00,
-    heatLevel: 5, // Ghost pepper is very hot
+    heatLevel: 5, 
     dataAiHint: 'guava ghost pepper',
   },
 ];
@@ -57,8 +57,8 @@ const ProductCard = ({ product }: { product: Product }) => {
           src={product.image}
           alt={`Molho ${product.name}`}
           width={600}
-          height={400} // Adjusted for a more rectangular product card image
-          className="rounded-t-lg object-cover w-full h-64" // Fixed height for images
+          height={400}
+          className="rounded-t-lg object-cover w-full h-64"
           data-ai-hint={product.dataAiHint}
         />
       </CardHeader>
@@ -114,4 +114,3 @@ const ProductsSection = () => {
 };
 
 export default ProductsSection;
-
