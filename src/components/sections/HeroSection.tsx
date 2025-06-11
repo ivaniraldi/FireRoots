@@ -7,8 +7,22 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-background">
       <div className="absolute inset-0 z-0">
-        <Image
-          src="https://placehold.co/1920x1080.png"
+        {/* Vídeo de fundo (manter comentado se não houver vídeo pronto)
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline // Importante para mobile
+          className="w-full h-full object-cover opacity-20"
+          poster="https://placehold.co/1920x1080.png" // Poster para carregar antes do vídeo
+          data-ai-hint="fogo manga pimenta explosao"
+        >
+          <source src="/videos/mango-magma-bg.mp4" type="video/mp4" />
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+        */}
+         <Image
+          src="https://placehold.co/1920x1080.png" // Placeholder enquanto não há vídeo
           alt="Explosão de manga e pimenta Scorpion em chamas, representando o molho Mango Magma da Fireroots"
           layout="fill"
           objectFit="cover"
@@ -24,20 +38,20 @@ const HeroSection = () => {
         <div className="mb-8 animate-in fade-in slide-in-from-top-12 duration-1000">
           <Image
             src="https://placehold.co/350x350.png"
-            alt="Garrafa do molho de pimenta artesanal Mango Magma 150ml, 100% natural e picante"
+            alt="Garrafa do molho de pimenta artesanal Mango Magma 150ml, 100% natural e picante da Fireroots"
             width={280}
             height={280}
-            className="shadow-2xl mx-auto transform transition-transform hover:scale-105 duration-300"
+            className="shadow-2xl mx-auto transform transition-transform hover:scale-105 duration-300" // Removido rounded-lg
             data-ai-hint="mango magma garrafa natural"
             priority
           />
         </div>
         
         <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl uppercase mb-4 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
-          <span className="text-primary">Mango Magma:</span> <span style={{color: '#FDA302'}}>Sabor Tropical,</span> <span style={{color: '#C2BDC0'}}>Fogo Real!</span>
+          <span className="text-primary">Mango Magma:</span> <span style={{color: 'hsl(var(--secondary))'}}>Sabor Tropical,</span> <span style={{color: 'hsl(var(--custom-gray))'}}>Fogo Real!</span>
         </h1>
         <p className="font-body text-lg md:text-xl text-foreground max-w-2xl mb-10 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-400">
-          Experimente a explosão de manga docinha com a pimenta Scorpion que não alivia pra ninguém. Nosso molho artesanal é 100% natural, em garrafas de 150ml. Para quem tem coragem de encarar um sabor que é pura ousadia.
+          Experimente a explosão de manga docinha com a pimenta Scorpion que não alivia pra ninguém. Nosso molho artesanal é 100% natural, em garrafas de 150ml. Para quem tem coragem de encarar um sabor que é pura ousadia. E aí, vai arregar?
         </p>
         <Button 
           size="lg" 
