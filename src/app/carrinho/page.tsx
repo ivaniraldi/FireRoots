@@ -89,10 +89,32 @@ export default function CartPage() {
   };
   
   const handleCheckout = () => {
-    // Placeholder for actual checkout logic
+    if (totalItems === 0) {
+      toast({
+        title: "Carrinho vazio",
+        description: "Adicione itens ao carrinho antes de finalizar o pedido.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const phoneNumber = "554892058069";
+    let message = `Olá Fireroots! Gostaria de fazer o seguinte pedido:\n\n`;
+
+    items.forEach(item => {
+      message += `${item.quantity}x ${item.name} (150ml) - R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}\n`;
+    });
+
+    message += `\nTotal do Pedido: R$ ${totalPrice.toFixed(2).replace('.', ',')}\n`;
+    message += `\nObrigado(a)!`;
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
+
     toast({
-      title: "Pedido finalizado!",
-      description: "Obrigado por comprar na Fireroots! Em breve seu Mango Magma estará a caminho. (Esta é uma simulação)",
+      title: "Pedido enviado via WhatsApp!",
+      description: "Continue a conversa no WhatsApp para finalizar seu pedido com a Fireroots. Seu carrinho foi limpo.",
     });
     clearCart();
   };
@@ -155,7 +177,7 @@ export default function CartPage() {
             </CardContent>
             <CardFooter className="flex flex-col gap-3">
               <Button size="lg" className="w-full font-headline uppercase" onClick={handleCheckout}>
-                Finalizar Compra
+                Finalizar Compra via WhatsApp
               </Button>
               <Button variant="outline" className="w-full" onClick={handleClearCart}>
                 Limpar Carrinho
@@ -167,3 +189,4 @@ export default function CartPage() {
     </div>
   );
 }
+
