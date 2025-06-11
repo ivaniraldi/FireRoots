@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
-import { Instagram, Flame, Mail, Handshake } from 'lucide-react'; // Adicionado Mail e Handshake
+import Image from 'next/image';
+import { Instagram, Mail, Handshake, Flame as FlameIcon } from 'lucide-react';
 import TikTokIcon from '@/components/icons/TikTokIcon';
 import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
@@ -10,10 +11,16 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 items-start">
           <div className="animate-in fade-in slide-in-from-bottom-5 duration-500">
-            <div className="flex items-center gap-2 text-2xl font-headline uppercase text-primary mb-3">
-                <Flame className="h-7 w-7" style={{ color: '#D73908' }} />
-                <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
-            </div>
+            <Link href="/" className="flex items-center gap-2 text-2xl font-headline uppercase text-primary mb-3 transition-transform hover:scale-105">
+              <Image
+                src="https://i.imgur.com/pqUvJEU.png"
+                alt="Logo da Fireroots"
+                width={40} // Ajuste o tamanho conforme necessário
+                height={40}
+                className="rounded-full"
+              />
+              <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
+            </Link>
             <p className="text-sm text-muted-foreground">
               Sabor que incendeia, feito no Brasil! Molho artesanal ultra picante Mango Magma. A pimenta que faltava na sua vida.
             </p>
@@ -21,7 +28,7 @@ const Footer = () => {
           <div className="animate-in fade-in slide-in-from-bottom-5 duration-500 delay-100">
             <h4 className="font-headline text-lg uppercase text-secondary mb-4">Mapa do Fogo</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/#produtos" className="hover:text-secondary transition-colors flex items-center gap-2"><Flame size={16}/>O Brabo (Nosso Molho)</Link></li>
+              <li><Link href="/#produtos" className="hover:text-secondary transition-colors flex items-center gap-2"><FlameIcon size={16}/>O Brabo (Nosso Molho)</Link></li>
               <li><Link href="/#sobre-marca" className="hover:text-secondary transition-colors flex items-center gap-2">🔥 Quem Manda na Brasa</Link></li>
               <li><Link href="/parcerias" className="hover:text-secondary transition-colors flex items-center gap-2"><Handshake size={16}/> Cola com a gente (Parcerias)</Link></li>
               <li><Link href="/carrinho" className="hover:text-secondary transition-colors flex items-center gap-2">🌶️ Meu Rango Picante</Link></li>

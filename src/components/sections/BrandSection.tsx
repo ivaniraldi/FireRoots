@@ -29,15 +29,20 @@ const BrandSection = () => {
                <p className="flex items-start animate-in fade-in slide-in-from-bottom-5 duration-500 delay-500"><HeartHandshake className="w-5 h-5 mr-2 mt-1 text-secondary flex-shrink-0" /> Interessado em parcerias? Se você é influencer, tem uma marca alinhada com nossos valores ou quer colaborar, <Link href="/parcerias" className="text-secondary hover:text-primary underline ml-1">visite nossa página de parcerias!</Link></p>
             </div>
           </div>
-          <div className="animate-in fade-in slide-in-from-left-10 duration-700 order-first md:order-last">
-            <Image
-              src="https://placehold.co/600x500.png"
-              alt="Mãos habilidosas preparando ingredientes frescos como manga e pimentas para o molho artesanal Mango Magma da Fireroots"
-              width={600}
-              height={500}
-              className="rounded-xl shadow-xl object-cover transform transition-transform hover:scale-105 duration-300"
-              data-ai-hint="artesanal ingredientes pimenta manga maos"
-            />
+          <div className="animate-in fade-in slide-in-from-left-10 duration-700 order-first md:order-last flex justify-center items-center">
+            <video 
+              src="https://placehold.co/281x500.mp4" // Substitua pelo caminho do seu vídeo real
+              width="281" 
+              height="500" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="rounded-xl shadow-xl object-cover transform transition-transform hover:scale-105 duration-300 max-w-full"
+              data-ai-hint="producao artesanal molho pimenta ingredientes frescos"
+            >
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
           </div>
         </div>
       </div>
