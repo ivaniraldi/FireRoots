@@ -7,7 +7,6 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-background">
       <div className="absolute inset-0 z-0">
-        {/* Vídeo de fundo (manter comentado se não houver vídeo pronto)
         <video
           autoPlay
           loop
@@ -17,20 +16,10 @@ const HeroSection = () => {
           poster="https://placehold.co/1920x1080.png" // Poster para carregar antes do vídeo
           data-ai-hint="fogo manga pimenta explosao"
         >
-          <source src="/videos/mango-magma-bg.mp4" type="video/mp4" />
+          {/* LEMBRE-SE: Substitua 'https://placehold.co/1920x1080.mp4' pelo caminho do seu vídeo na pasta public/videos/ */}
+          <source src="https://placehold.co/1920x1080.mp4" type="video/mp4" />
           Seu navegador não suporta o elemento de vídeo.
         </video>
-        */}
-         <Image
-          src="https://placehold.co/1920x1080.png" // Placeholder enquanto não há vídeo
-          alt="Explosão de manga e pimenta Scorpion em chamas, representando o molho Mango Magma da Fireroots"
-          layout="fill"
-          objectFit="cover"
-          quality={80}
-          className="opacity-20"
-          data-ai-hint="molho manga pimenta fogo tropical"
-          priority
-        />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background"></div>
       </div>
 
@@ -41,7 +30,7 @@ const HeroSection = () => {
             alt="Garrafa do molho de pimenta artesanal Mango Magma 150ml, 100% natural e picante da Fireroots"
             width={280}
             height={280}
-            className="shadow-2xl mx-auto transform transition-transform hover:scale-105 duration-300" // Removido rounded-lg
+            className="shadow-2xl mx-auto transform transition-transform hover:scale-105 duration-300"
             data-ai-hint="mango magma garrafa natural"
             priority
           />
@@ -51,14 +40,14 @@ const HeroSection = () => {
           <span className="text-primary">Mango Magma:</span> <span style={{color: 'hsl(var(--secondary))'}}>Sabor Tropical,</span> <span style={{color: 'hsl(var(--custom-gray))'}}>Fogo Real!</span>
         </h1>
         <p className="font-body text-lg md:text-xl text-foreground max-w-2xl mb-10 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-400">
-          Experimente a explosão de manga docinha com a pimenta Scorpion que não alivia pra ninguém. Nosso molho artesanal é 100% natural, em garrafas de 150ml. Para quem tem coragem de encarar um sabor que é pura ousadia. E aí, vai arregar?
+          Experimente a explosão de manga docinha com a pimenta Scorpion que não alivia pra ninguém. Nosso molho artesanal é 100% natural, em garrafas de 150ml. Para quem tem coragem de encarar um sabor que é pura ousadia.
         </p>
         <Button 
           size="lg" 
           className="font-headline uppercase text-lg py-6 px-12 bg-secondary text-secondary-foreground hover:bg-secondary/90 transform transition-transform hover:scale-105 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-600"
           asChild
         >
-          <Link href="/#produtos">Quero Esse Fogo Todo!</Link>
+          <Link href="/#produtos">Quero Experimentar!</Link>
         </Button>
       </div>
     </section>

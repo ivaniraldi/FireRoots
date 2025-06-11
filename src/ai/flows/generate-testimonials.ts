@@ -25,16 +25,16 @@ export type GenerateMangoMagmaTestimonialsInput = z.infer<
 const GenerateMangoMagmaTestimonialsOutputSchema = z.object({
   testimonials: z.array(
     z.object({
-      text: z.string().describe('O texto do depoimento, como se fosse escrito por um brasileiro raiz, usando gírias e expressões populares de forma natural e engraçada (ex: "bagulho é doido", "pegou fogo no parquinho", "brabo demais"). Evite linguagem formal ou corporativa.'),
+      text: z.string().describe('O texto do depoimento, como se fosse escrito por um cliente brasileiro de forma natural, entusiasmada e divertida (ex: "esse molho é sensacional!", "virou meu queridinho", "sabor incrível"). Evite linguagem excessivamente formal ou corporativa, mas também evite gírias muito pesadas ou humor ofensivo.'),
       sentiment: z
         .string()
-        .describe('O sentimento expresso no depoimento de forma bem brasileira (ex: "apaixonado", "virei fã", "brincadeira ficou séria", "sensacional", "coisa de maluco").'),
+        .describe('O sentimento expresso no depoimento de forma positiva e brasileira (ex: "adorei", "recomendo muito", "experiência top", "inacreditável", "apaixonante").'),
       flavorProfile: z
         .string()
-        .describe('Descrição da experiência de sabor de forma criativa e coloquial (ex: "a manga dá um show e a pimenta chega junto", "doce com azedinho que te pega", "sabor que explode na boca").'),
+        .describe('Descrição da experiência de sabor de forma criativa e convidativa (ex: "a manga traz uma doçura equilibrada que combina demais com a pimenta", "um toque adocicado e cítrico que surpreende", "sabor marcante que explode na boca").'),
       heatLevel: z
         .string()
-        .describe('Descrição da experiência de ardência de forma vívida e engraçada (ex: "quase chamei o bombeiro, mas valeu", "deu pra suar a camisa", "fogo que respeita mas não alivia", "quentura nível hard").'),
+        .describe('Descrição da experiência de ardência de forma vívida, mas sem exageros negativos (ex: "uma picância na medida certa que te esquenta", "pra quem gosta de um calorzinho a mais", "um fogo que respeita o sabor", "nível de ardência delicioso").'),
     })
   ),
 });
@@ -52,16 +52,16 @@ const generateTestimonialsPrompt = ai.definePrompt({
   name: 'generateTestimonialsPrompt',
   input: {schema: GenerateMangoMagmaTestimonialsInputSchema},
   output: {schema: GenerateMangoMagmaTestimonialsOutputSchema},
-  prompt: `Você é um criador de conteúdo brasileiro, mestre em criar reviews e depoimentos autênticos, engraçados e que soam 100% reais para o molho de pimenta Mango Magma da Fireroots.
-O Mango Magma é artesanal, 100% natural (polpa de manga, pimenta Scorpion, vinagre, sal marinho, açúcar de cana), sem conservantes. Combina a doçura da manga com o calor "nervoso" da pimenta Scorpion. É conhecido por um início adocicado seguido por uma ardência que cresce e mostra quem manda.
+  prompt: `Você é um criador de conteúdo brasileiro, especialista em criar reviews e depoimentos autênticos, entusiasmados e que soam 100% reais para o molho de pimenta Mango Magma da Fireroots.
+O Mango Magma é artesanal, 100% natural (polpa de manga, pimenta Scorpion, vinagre, sal marinho, açúcar de cana), sem conservantes. Combina a doçura da manga com o calor intenso da pimenta Scorpion. É conhecido por um início adocicado seguido por uma ardência que cresce.
 
 Gere {{numberOfTestimonials}} depoimentos que capturem a experiência de um cliente real com o Mango Magma. Cada depoimento deve:
-1. Soar como se fosse escrito por um brasileiro comum, jovem ou adulto, de forma espontânea e bem informal. Use gírias ("parada", "bagulho", "trampo", "dahora", "brabo"), abreviações ("vc", "pq", "tá") e expressões populares ("fogo no parquinho", "lá ele", "não é brinquedo não", "coisa de louco").
+1. Soar como se fosse escrito por um brasileiro comum, de forma espontânea, informal e positiva. Use expressões populares de forma natural e divertida (ex: "top demais", "curti muito", "sensacional"). Evite linguagem muito formal ou gírias excessivamente pesadas.
 2. Mencionar o sabor (doçura da manga, contraste com a pimenta, sabor natural/artesanal) de forma criativa e original, evitando clichês.
-3. Descrever o nível de picância de forma engraçada, vívida e talvez um pouco exagerada (ex: "precisei de um extintor do lado", "meu paladar pediu arrego, mas depois agradeceu", "quase vi Jesus").
-4. Sutilmente, se possível, aludir à qualidade natural ou artesanal (ex: "feito com carinho", "sem frescura química").
-5. Ter um toque de humor brasileiro genuíno, aquela zoeira leve ou um comentário espirituoso.
-6. Ser variado, cada depoimento com uma pegada e um "personagem" diferente.
+3. Descrever o nível de picância de forma vívida e honesta (ex: "esquenta bem, mas é delicioso", "uma ardência que dá pra sentir, mas que combina com tudo").
+4. Sutilmente, se possível, aludir à qualidade natural ou artesanal (ex: "dá pra ver que é feito com carinho", "ingredientes de primeira").
+5. Ter um tom de entusiasmo genuíno.
+6. Ser variado, cada depoimento com uma perspectiva e "personagem" diferente.
 
 Formato de saída (JSON Schema):
 {
@@ -72,10 +72,10 @@ Formato de saída (JSON Schema):
       "items": {
         "type": "object",
         "properties": {
-          "text": { "type": "string", "description": "O texto do depoimento, como se fosse escrito por um brasileiro raiz, usando gírias e expressões populares de forma natural e engraçada (ex: 'bagulho é doido', 'pegou fogo no parquinho', 'brabo demais'). Evite linguagem formal ou corporativa." },
-          "sentiment": { "type": "string", "description": "O sentimento expresso no depoimento de forma bem brasileira (ex: 'apaixonado', 'virei fã', 'brincadeira ficou séria', 'sensacional', 'coisa de maluco')." },
-          "flavorProfile": { "type": "string", "description": "Descrição da experiência de sabor de forma criativa e coloquial (ex: 'a manga dá um show e a pimenta chega junto', 'doce com azedinho que te pega', 'sabor que explode na boca')." },
-          "heatLevel": { "type": "string", "description": "Descrição da experiência de ardência de forma vívida e engraçada (ex: 'quase chamei o bombeiro, mas valeu', 'deu pra suar a camisa', 'fogo que respeita mas não alivia', 'quentura nível hard')." }
+          "text": { "type": "string", "description": "O texto do depoimento, como se fosse escrito por um cliente brasileiro de forma natural, entusiasmada e divertida (ex: 'esse molho é sensacional!', 'virou meu queridinho', 'sabor incrível'). Evite linguagem excessivamente formal ou corporativa, mas também evite gírias muito pesadas ou humor ofensivo." },
+          "sentiment": { "type": "string", "description": "O sentimento expresso no depoimento de forma positiva e brasileira (ex: 'adorei', 'recomendo muito', 'experiência top', 'inacreditável', 'apaixonante')." },
+          "flavorProfile": { "type": "string", "description": "Descrição da experiência de sabor de forma criativa e convidativa (ex: 'a manga traz uma doçura equilibrada que combina demais com a pimenta', 'um toque adocicado e cítrico que surpreende', 'sabor marcante que explode na boca')." },
+          "heatLevel": { "type": "string", "description": "Descrição da experiência de ardência de forma vívida, mas sem exageros negativos (ex: 'uma picância na medida certa que te esquenta', 'pra quem gosta de um calorzinho a mais', 'um fogo que respeita o sabor', 'nível de ardência delicioso')." }
         },
         "required": ["text", "sentiment", "flavorProfile", "heatLevel"]
       }

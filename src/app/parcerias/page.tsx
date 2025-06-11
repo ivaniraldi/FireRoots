@@ -6,22 +6,21 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea'; // Importando Textarea
+import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Handshake, Send, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 
-// Metadata estática, pois 'use client' não permite exportação direta de metadata dinâmica
-export const dynamic = 'force-static'; // Garante que a página seja estática
-const pageTitle = 'Parcerias de Peso - Fireroots';
-const pageDescription = 'Quer botar fogo no mundo com a gente? Manda sua ideia de parceria pra Fireroots e vamos incendiar o mercado juntos!';
+export const dynamic = 'force-static';
+const pageTitle = 'Parcerias Fireroots - Vamos Crescer Juntos!';
+const pageDescription = 'Tem uma ideia de parceria ou quer colaborar com a Fireroots? Entre em contato conosco e vamos explorar oportunidades juntos!';
 
 export function generateMetadata(): Metadata {
   return {
     title: pageTitle,
     description: pageDescription,
-    keywords: 'parceria fireroots, influencer molho de pimenta, marketing de influencia, mango magma, contato comercial',
+    keywords: 'parceria fireroots, influencer molho de pimenta, marketing de influencia, mango magma, contato comercial, colaboração',
   };
 }
 
@@ -49,7 +48,6 @@ export default function PartnershipsPage() {
 
   useEffect(() => {
     const { name, email, socialHandle, message } = formData;
-    // Validação simples: todos os campos devem ser preenchidos
     if (name.trim() && email.trim() && socialHandle.trim() && message.trim() && email.includes('@')) {
       setIsFormValid(true);
     } else {
@@ -61,8 +59,8 @@ export default function PartnershipsPage() {
     e.preventDefault();
     if (!isFormValid) {
       toast({
-        title: '✋ Ih, faltou algo!',
-        description: 'Preencha todos os campos pra gente trocar uma ideia maneira.',
+        title: '✋ Atenção!',
+        description: 'Por favor, preencha todos os campos para enviar sua proposta.',
         variant: 'destructive',
       });
       return;
@@ -73,22 +71,22 @@ export default function PartnershipsPage() {
 
 Meu nome é ${formData.name}.
 Email: ${formData.email}
-Perfil Social: ${formData.socialHandle}
+Perfil Social/Site: ${formData.socialHandle}
 
-Minha ideia de parceria é:
+Minha proposta de parceria é:
 ${formData.message}
 
-Abraços!
+Atenciosamente,
+${formData.name}
 `;
     const mailtoLink = `mailto:contato@fireroots.com.br?subject=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
     
     window.location.href = mailtoLink;
 
     toast({
-      title: '🚀 Proposta no Forno!',
-      description: 'Seu cliente de email vai abrir pra você enviar a proposta. Tamo junto!',
+      title: '🚀 Proposta Enviada!',
+      description: 'Seu cliente de e-mail abrirá para você enviar a proposta. Agradecemos o contato!',
     });
-    // Limpa o formulário após tentativa de envio
     setFormData({ name: '', email: '', socialHandle: '', message: '' });
   };
 
@@ -99,61 +97,61 @@ Abraços!
           <CardHeader className="text-center">
             <Handshake className="mx-auto h-16 w-16 text-secondary mb-4" />
             <CardTitle className="font-headline text-4xl md:text-5xl uppercase">
-              <span className="text-primary">Bora Tocar o Terror</span> <span style={{color: 'hsl(var(--custom-gray))'}}>Juntos?</span>
+              <span className="text-primary">Vamos Colaborar</span> <span style={{color: 'hsl(var(--custom-gray))'}}>e Crescer Juntos?</span>
             </CardTitle>
             <CardDescription className="font-body text-lg text-muted-foreground mt-2">
-              Se você é influencer, criador de conteúdo ou tem uma marca que é puro fogo, manda sua ideia pra gente! A Fireroots adora uma parceria que bota pra quebrar.
+              Se você é influencer, criador de conteúdo, ou representa uma marca com sinergia com a Fireroots, adoraríamos ouvir sua proposta de parceria!
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <Label htmlFor="name" className="text-sm font-medium text-muted-foreground">Seu Nome ou da Marca</Label>
+                <Label htmlFor="name" className="text-sm font-medium text-muted-foreground">Seu Nome ou Nome da Marca</Label>
                 <Input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Ex: João da Silva / Marca Braba"
+                  placeholder="Ex: João Silva / Marca XYZ"
                   required
                   className="mt-1"
                 />
               </div>
               <div>
-                <Label htmlFor="email" className="text-sm font-medium text-muted-foreground">Seu Melhor Email</Label>
+                <Label htmlFor="email" className="text-sm font-medium text-muted-foreground">Seu Melhor Email de Contato</Label>
                 <Input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Ex: joao.brabo@email.com"
+                  placeholder="Ex: contato@email.com"
                   required
                   className="mt-1"
                 />
               </div>
               <div>
-                <Label htmlFor="socialHandle" className="text-sm font-medium text-muted-foreground">Seu @ no Instagram/TikTok (ou site)</Label>
+                <Label htmlFor="socialHandle" className="text-sm font-medium text-muted-foreground">Seu Perfil Principal (Instagram, TikTok, Site, etc.)</Label>
                 <Input
                   type="text"
                   id="socialHandle"
                   name="socialHandle"
                   value={formData.socialHandle}
                   onChange={handleChange}
-                  placeholder="Ex: @fireroots_oficial"
+                  placeholder="Ex: @seuperfil ou www.seusite.com"
                   required
                   className="mt-1"
                 />
               </div>
               <div>
-                <Label htmlFor="message" className="text-sm font-medium text-muted-foreground">Sua Ideia Incendiária (Conta Tudo!)</Label>
+                <Label htmlFor="message" className="text-sm font-medium text-muted-foreground">Sua Ideia de Parceria (Conte-nos Mais!)</Label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Descreve aí como a gente pode botar fogo no parquinho juntos..."
+                  placeholder="Descreva sua proposta de colaboração, seus objetivos e como podemos trabalhar juntos..."
                   required
                   className="mt-1 min-h-[120px]"
                 />
@@ -161,7 +159,7 @@ Abraços!
               {!isFormValid && (
                 <div className="flex items-center text-xs text-destructive p-2 bg-destructive/10 rounded-md animate-in fade-in duration-300">
                   <AlertCircle className="h-4 w-4 mr-2 flex-shrink-0" />
-                  Preencha todos os campos corretamente pra gente continuar, beleza? O email precisa ser válido.
+                  Por favor, preencha todos os campos. O email deve ser válido.
                 </div>
               )}
               <Button
@@ -172,13 +170,13 @@ Abraços!
                 aria-label={!isFormValid ? "Preencha todos os campos para enviar" : "Enviar proposta de parceria"}
               >
                 <Send className="mr-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                Mandar Proposta (e Botar Fogo!)
+                Enviar Proposta
               </Button>
             </form>
           </CardContent>
           <CardFooter className="flex justify-center pt-6">
              <Button variant="link" asChild className="text-sm text-muted-foreground hover:text-primary">
-                <Link href="/">Prefiro só comprar o molho por enquanto</Link>
+                <Link href="/">Voltar para a loja</Link>
             </Button>
           </CardFooter>
         </Card>

@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Papo Reto: Política de Privacidade - Fireroots',
-  description: 'Aqui na Fireroots a gente brinca com fogo, mas com seus dados a conversa é séria (tão séria quanto nossa pimenta Scorpion!). Saca só como cuidamos da sua privacidade.',
+  title: 'Política de Privacidade - Fireroots',
+  description: 'Na Fireroots, sua privacidade é levada a sério. Entenda como coletamos, usamos e protegemos seus dados pessoais.',
   keywords: 'política de privacidade fireroots, segurança de dados, proteção de dados, lgpd, termos de uso molho de pimenta',
 };
 
@@ -21,117 +21,116 @@ export default function PrivacyPolicyPage() {
           <span className="text-primary">Política de Privacidade</span> <span style={{color: 'hsl(var(--secondary))'}}>da Fireroots</span>
         </h1>
         <p className="font-body text-lg text-center text-muted-foreground mb-10">
-            Na Fireroots, a gente brinca com fogo, mas com seus dados o papo é reto e sem enrolação!
+            Levamos sua privacidade a sério. Aqui detalhamos nosso compromisso com seus dados.
         </p>
       </div>
       <div className="prose prose-invert mx-auto max-w-3xl text-foreground font-body animate-in fade-in slide-in-from-bottom-10 duration-500 delay-100">
         <p>
-          Sua privacidade é sagrada pra gente aqui na Fireroots. Nossa política é simples: respeito total pela sua privacidade em relação a qualquer informação sua que a gente possa coletar no nosso site e em outros canais que a gente manda ver.
+          Sua privacidade é importante para nós da Fireroots. É política da Fireroots respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site Fireroots, e outros sites que possuímos e operamos.
         </p>
 
-        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">1. Que Dados a Gente Pega (Só o Básico, Fera)?</h2>
+        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">1. Coleta de Dados</h2>
         <p>
-          A gente só pede seus dados pessoais quando realmente precisa pra te entregar um produto ou serviço daquele jeito (no caso, nosso Mango Magma delicioso). Fazemos isso de forma justa e transparente, com seu total conhecimento e consentimento. E pode crer, a gente sempre avisa o porquê e como vamos usar essa parada.
+          Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.
         </p>
         <p>
-          Guardamos as informações coletadas só pelo tempo necessário pra te fornecer o serviço solicitado. E quando armazenamos, protegemos com as melhores ferramentas pra evitar perdas, roubos e acessos não autorizados, tipo segurança de banco, só que mais legal.
+          Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.
         </p>
         <p>
-          Não saímos por aí espalhando seus dados pessoais pra geral, nem pra terceiros, a não ser que a lei mande (aí não tem choro nem vela).
+          Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.
         </p>
         <p>
-          Os dados que a gente pode coletar pra você receber seu Mango Magma são:
+          Os dados que podemos coletar para processar seu pedido do Mango Magma incluem:
         </p>
         <ul>
-          <li>Seu nome completo (pra gente saber quem é o corajoso(a) da pimenta)</li>
-          <li>Seu e-mail (pra gente te mandar novidades quentes e rastreio, se você quiser)</li>
-          <li>Número de telefone (pra entrega ser suave e pra gente te ligar se o motoboy se perder)</li>
-          <li>Endereço de entrega (pro Mango Magma chegar no lugar certo e não na casa do vizinho fofoqueiro)</li>
-          <li>CEP, bairro, cidade, estado (o kit completo do endereço)</li>
-          <li>Informações de pagamento (processadas com segurança máxima pelos nossos parceiros de checkout, a gente nem encosta nesses dados sensíveis)</li>
-          <li>Histórico de pedidos (pra você lembrar de quantas vezes encarou o calor e pra gente saber se você é cliente VIP)</li>
+          <li>Nome completo</li>
+          <li>Endereço de e-mail</li>
+          <li>Número de telefone (para fins de entrega e contato sobre o pedido)</li>
+          <li>Endereço de entrega completo (rua, número, complemento, bairro, CEP, cidade, estado)</li>
+          <li>Informações de pagamento (processadas de forma segura por nossos parceiros de checkout)</li>
+          <li>Histórico de pedidos</li>
         </ul>
 
 
-        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">2. Como a Gente Usa Seus Dados (Pra Coisa Boa, Pode Crer)?</h2>
+        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">2. Uso dos Dados</h2>
         <p>
-          Usamos seus dados pra várias paradas importantes, como:
+          Utilizamos suas informações para:
         </p>
         <ul>
-          <li>Processar e gerenciar seus pedidos de Mango Magma e pagamentos (a parte chata, mas essencial).</li>
-          <li>Entregar os produtos que você comprou (a melhor parte, quando o carteiro sorri pra você!).</li>
-          <li>Trocar uma ideia com você sobre seu pedido, novidades quentes da Fireroots, promoções (só se você autorizar, claro, nada de spam!).</li>
-          <li>Te dar aquele suporte gente boa e responder suas dúvidas existenciais sobre pimenta.</li>
-          <li>Melhorar nosso site, produtos e serviços (pra ficar cada vez mais top, tipo versão 2.0).</li>
-          <li>Cumprir as obrigações legais (porque a gente é do bem e segue as regras).</li>
-          <li>Evitar fraudes e garantir que as transações sejam seguras pra todo mundo (xô, malandragem!).</li>
+          <li>Processar e gerenciar seus pedidos e pagamentos.</li>
+          <li>Realizar a entrega dos produtos adquiridos.</li>
+          <li>Comunicar sobre seu pedido, novidades da Fireroots e promoções (mediante seu consentimento).</li>
+          <li>Fornecer suporte ao cliente e responder a suas dúvidas.</li>
+          <li>Melhorar nosso site, produtos e serviços.</li>
+          <li>Cumprir obrigações legais.</li>
+          <li>Prevenir fraudes e garantir a segurança das transações.</li>
         </ul>
 
-        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">3. Compartilhamento de Dados (Só o Necessário e com os Parças Certos!)</h2>
+        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">3. Compartilhamento de Dados</h2>
         <p>
-          Nosso site pode ter links pra sites de terceiros que não são nossos. Fica esperto(a), porque a gente não tem controle sobre o conteúdo e as práticas deles, então não podemos nos responsabilizar pelas políticas de privacidade de cada um. É tipo rolê: cada um cuida do seu copo.
+          O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.
         </p>
         <p>
-          Podemos compartilhar seus dados pessoais com algumas categorias de terceiros, mas só o essencial pra coisa funcionar:
+          Podemos compartilhar seus dados pessoais com as seguintes categorias de terceiros, apenas quando necessário:
         </p>
         <ul>
-          <li><strong>Nossos Parceiros de Confiança:</strong> Empresas que nos ajudam a tocar o barco, como processadores de pagamento (tipo PagSeguro, Mercado Pago - exemplos), transportadoras (Correios, motoboys parceiros), plataformas de e-mail marketing (só com seu OK). Eles só acessam seus dados pra fazer o trabalho deles e são obrigados a manter tudo em segredo, tipo pacto de sangue.</li>
-          <li><strong>Autoridades Legais:</strong> Se a lei mandar (tipo ordem judicial), ou pra proteger nossos direitos, propriedade ou segurança, ou de outras pessoas. Aí não tem jeito, a gente colabora.</li>
+          <li><strong>Parceiros de Confiança:</strong> Empresas que nos auxiliam na operação do negócio, como processadores de pagamento, transportadoras e plataformas de e-mail marketing (com seu consentimento). Eles têm acesso aos seus dados apenas para realizar tarefas em nosso nome e são obrigados a não divulgá-los ou usá-los para qualquer outra finalidade.</li>
+          <li><strong>Autoridades Legais:</strong> Se exigido por lei ou para proteger nossos direitos, propriedade ou segurança, ou a de outros.</li>
         </ul>
         <p>
-          Pode relaxar: não vendemos, alugamos nem trocamos seus dados pessoais com terceiros pra eles fazerem marketing sem seu consentimento explícito. Aqui não tem essa de leilão de dados!
+          Não vendemos, alugamos ou trocamos suas informações pessoais com terceiros para fins de marketing sem seu consentimento explícito.
         </p>
 
-        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">4. Segurança dos Dados (Nossa Fortaleza Digital!)</h2>
+        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">4. Segurança dos Dados</h2>
         <p>
-          A segurança dos seus dados é prioridade máxima na Fireroots. Usamos as melhores tecnologias e práticas pra proteger suas informações contra acesso, uso, alteração ou destruição não autorizados. Isso inclui paradas de segurança padrão da indústria.
+          A segurança dos seus dados é uma prioridade para a Fireroots. Empregamos medidas técnicas e organizacionais apropriadas para proteger suas informações pessoais contra acesso, uso, alteração ou destruição não autorizados.
         </p>
         <p>
-          Mas ó, mesmo assim, nenhum método de transmissão pela internet ou armazenamento eletrônico é 100% à prova de falhas. A gente se esforça pra caramba, mas segurança total é tipo unicórnio: todo mundo fala, mas ninguém nunca viu um de verdade. O que a gente garante é o nosso melhor esforço.
+          No entanto, nenhum método de transmissão pela Internet ou método de armazenamento eletrônico é 100% seguro. Embora nos esforcemos para usar meios comercialmente aceitáveis para proteger suas informações pessoais, não podemos garantir sua segurança absoluta.
         </p>
         
-        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">5. Seus Direitos (Você Manda Nessa Parada!)</h2>
+        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">5. Seus Direitos</h2>
         <p>
-          Você tem total liberdade pra recusar nosso pedido de informações pessoais, mas aí pode ser que a gente não consiga te oferecer alguns dos nossos serviços picantes (tipo, entregar o Mango Magma na sua casa, né?).
+          Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.
         </p>
         <p>
-          Dependendo de onde você mora, você pode ter os seguintes direitos sobre seus dados:
+          Você pode ter os seguintes direitos sobre seus dados pessoais, dependendo da legislação aplicável:
         </p>
         <ul>
-          <li><strong>Acesso:</strong> Direito de pedir pra ver os dados que a gente tem sobre você.</li>
-          <li><strong>Correção:</strong> Direito de pedir pra corrigir dados errados ou incompletos (tipo o CEP que você digitou correndo).</li>
-          <li><strong>Exclusão:</strong> Direito de pedir pra gente apagar seus dados (com algumas exceções legais, tipo guardar nota fiscal).</li>
-          <li><strong>Restrição:</strong> Direito de pedir pra gente limitar o uso dos seus dados em certas situações.</li>
-          <li><strong>Portabilidade:</strong> Direito de receber seus dados num formato organizado e levar pra outro lugar (se bem que, pra quê sair da Fireroots, né?).</li>
-          <li><strong>Oposição:</strong> Direito de dizer "não" pro uso dos seus dados em algumas situações, incluindo marketing direto.</li>
+          <li><strong>Acesso:</strong> O direito de solicitar cópias dos seus dados pessoais.</li>
+          <li><strong>Correção:</strong> O direito de solicitar a correção de qualquer informação que você acredite estar imprecisa ou incompleta.</li>
+          <li><strong>Exclusão:</strong> O direito de solicitar a exclusão dos seus dados pessoais, sob certas condições.</li>
+          <li><strong>Restrição de processamento:</strong> O direito de solicitar a restrição do processamento de seus dados pessoais, sob certas condições.</li>
+          <li><strong>Portabilidade de dados:</strong> O direito de solicitar que transfiramos os dados que coletamos para outra organização, ou diretamente para você, sob certas condições.</li>
+          <li><strong>Oposição ao processamento:</strong> O direito de se opor ao processamento de seus dados pessoais, sob certas condições, incluindo para marketing direto.</li>
         </ul>
         <p>
-          Pra exercer qualquer um desses direitos, manda um e-mail pra gente em: <a href="mailto:contato@fireroots.com.br" className="text-primary hover:underline">contato@fireroots.com.br</a>. Responderemos o mais rápido possível, dentro da lei e do bom senso.
+          Para exercer qualquer um desses direitos, entre em contato conosco através do e-mail: <a href="mailto:contato@fireroots.com.br" className="text-primary hover:underline">contato@fireroots.com.br</a>. Responderemos à sua solicitação dentro de um prazo razoável.
         </p>
 
-        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">6. Cookies e Outras Tecnologias (Os Biscoitinhos da Web)</h2>
+        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">6. Cookies e Tecnologias Similares</h2>
         <p>
-          Usamos cookies e tecnologias parecidas pra melhorar sua experiência no site, entender como você usa e, às vezes, pra te mostrar anúncios que combinam mais com seu estilo (tipo, mais pimenta!). Pra saber mais sobre os tipos de cookies que usamos, por que e como você pode controlar essa parada, dá uma olhada na nossa Política de Cookies (se tivermos uma específica, senão é isso aqui mesmo).
+          Utilizamos cookies e tecnologias de rastreamento semelhantes para melhorar sua experiência em nosso site, entender como você o utiliza e, ocasionalmente, para fins de publicidade direcionada (com seu consentimento).
         </p>
         <p>
-          Compromisso do Usuário: Você, como usuário gente fina, se compromete a usar nosso site e conteúdos na moral, sem fazer nada ilegal ou que vá contra a boa fé e a ordem pública. Sem disseminar propaganda esquisita, fake news, nem tentar hackear nossos sistemas ou espalhar vírus, beleza? Respeito acima de tudo.
-        </p>
-
-        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">7. Mudanças Nessa Política (Porque a Vida é Dinâmica, Igual Pimenta Malagueta)</h2>
-        <p>
-          De vez em quando, a gente pode precisar atualizar esta política de privacidade, seja pra refletir mudanças nas nossas práticas ou por motivos legais (tipo, se o governo inventar uma lei nova sobre pimenta e dados). Quando isso acontecer, a gente avisa publicando a nova política aqui e atualizando a data da "Última atualização" lá embaixo.
-        </p>
-        <p>
-          Dá uma espiada nesta política de vez em quando pra ficar por dentro das novidades. As mudanças entram em vigor assim que são publicadas aqui. Se você continuar usando o site depois disso, é porque concordou com as novidades.
+          O usuário se compromete a fazer uso adequado dos conteúdos e da informação que a Fireroots oferece no site e com caráter enunciativo, mas não limitativo: não se envolver em atividades que sejam ilegais ou contrárias à boa fé e à ordem pública; não difundir propaganda ou conteúdo de natureza racista, xenofóbica, ou qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos; não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) da Fireroots, de seus fornecedores ou terceiros.
         </p>
 
-        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">8. Fale com a Gente (Se For pra Elogiar a Pimenta, Melhor Ainda!)</h2>
+        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">7. Alterações Nesta Política</h2>
         <p>
-          Se tiver qualquer dúvida sobre esta política de privacidade ou sobre como a gente cuida dos seus dados (ou se só quiser trocar uma receita picante), manda um salve em: <a href="mailto:contato@fireroots.com.br" className="text-primary hover:underline">contato@fireroots.com.br</a>.
+          Podemos atualizar nossa política de privacidade de tempos em tempos. Notificaremos sobre quaisquer alterações publicando a nova política de privacidade nesta página e atualizando a data da "Última atualização" abaixo.
+        </p>
+        <p>
+          Recomendamos que você revise esta política de privacidade periodicamente para quaisquer alterações. As alterações a esta política de privacidade entram em vigor quando são publicadas nesta página.
+        </p>
+
+        <h2 className="font-headline text-2xl text-secondary uppercase mt-8 mb-4">8. Contato</h2>
+        <p>
+          Se você tiver alguma dúvida sobre esta política de privacidade ou sobre como lidamos com seus dados, entre em contato conosco: <a href="mailto:contato@fireroots.com.br" className="text-primary hover:underline">contato@fireroots.com.br</a>.
         </p>
         {currentDate && (
           <p className="mt-6 text-sm text-muted-foreground">
-            Última atualização: {currentDate} (Quase ontem, se o ontem fosse hoje!)
+            Última atualização: {currentDate}
           </p>
         )}
       </div>

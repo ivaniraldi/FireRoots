@@ -13,26 +13,25 @@ const allProducts: Product[] = [
   {
     id: 'mango-magma',
     name: 'Mango Magma',
-    description: 'Nosso carro-chefe e sua passagem só de ida pro paraíso (ou inferno?) dos sabores. Manga docinha encontra a Pimenta Scorpion numa dança que vai te fazer suar a camisa. Artesanal, 100% natural e sem frescura.',
+    description: 'Nosso carro-chefe: uma combinação ousada de manga doce com a intensidade da Pimenta Scorpion. Perfeito para quem busca sabor e emoção. Artesanal e 100% natural.',
     image: 'https://placehold.co/600x700.png',
     price: 24.99,
     heatLevel: 5,
     dataAiHint: 'mango magma molho pimenta natural artesanal',
     ingredients: [
-      'Polpa de manga de verdade (direto do pé, quase)',
-      'Pimenta Scorpion (a braba, pra dar aquele susto gostoso)',
-      'Vinagre de álcool (pra conservar essa joia)',
-      'Sal marinho (o toque do chef)',
-      'Açúcar de cana (só uma pitada pra equilibrar a picardia)',
-      'E só! Sem bruxaria química, sem nome esquisito no rótulo.',
+      'Polpa de manga fresca e selecionada',
+      'Pimenta Scorpion (ardência nível hard!)',
+      'Vinagre de álcool para conservação natural',
+      'Sal marinho para realçar o sabor',
+      'Açúcar de cana para equilibrar a picância',
+      'E só! Sem aditivos químicos ou conservantes artificiais.',
     ],
-    flavorProfile: 'Começa com um "oi" docinho e tropical da manga, aí a Scorpion chega chegando, sem pedir licença, com uma ardência que cresce e te abraça forte. Uma verdadeira montanha-russa de sabor!',
+    flavorProfile: 'Começa com a doçura tropical da manga, seguida por uma onda de calor crescente e marcante da pimenta Scorpion. Uma experiência de sabor única e inesquecível!',
     usageSuggestions: [
-      'Turbinar carnes, frangos e até aquela saladinha sem graça.',
-      'Dar um "grau" em tacos, burgers e laricas em geral.',
-      'Transformar sua pipoca numa experiência transcendental.',
-      'Marinadas ousadas: misture com azeite e prepare-se pro elogio (ou espanto).',
-      'Um pingo no café? Por sua conta e risco, campeão!',
+      'Ideal para carnes, aves, peixes e petiscos.',
+      'Experimente em tacos, hambúrgueres e sanduíches.',
+      'Dê um toque especial em molhos para salada e marinadas.',
+      'Use a criatividade e adicione onde sua imaginação permitir!',
     ],
     allergens: ['Sem Glúten', 'Sem Lactose', '100% Vegano', 'Livre de Soja'],
   },
@@ -47,8 +46,8 @@ const ProductCard = ({ product }: { product: Product }) => {
   const handleAddToCart = () => {
     addToCart(product);
     toast({
-      title: "🌶️ No Carrinho!",
-      description: `${product.name} (150ml) foi adicionado. Prepare o paladar (e um copo de leite, talvez?)!`,
+      title: "🌶️ Item no Carrinho!",
+      description: `${product.name} (150ml) foi adicionado. Prepare-se para o sabor!`,
       variant: "default", 
     });
   };
@@ -64,7 +63,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           className="rounded-t-lg object-cover w-full h-72 md:h-80"
           data-ai-hint={product.dataAiHint || "molho pimenta produto"}
         />
-        <Badge variant="destructive" className="absolute top-4 right-4 text-sm py-1 px-3 font-headline animate-pulse">NÍVEL HARD</Badge>
+        <Badge variant="destructive" className="absolute top-4 right-4 text-sm py-1 px-3 font-headline animate-pulse">NÍVEL INTENSO</Badge>
       </CardHeader>
       <CardContent className="flex-grow pt-6 px-5 md:px-7 animate-in fade-in slide-in-from-bottom-5 duration-500 delay-100">
         <CardTitle className="font-headline text-3xl md:text-4xl uppercase mb-2">
@@ -78,7 +77,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         {product.ingredients && (
           <div className="mb-5">
             <h4 className="font-headline text-xl uppercase text-secondary mb-2 flex items-center">
-              <Leaf className="mr-2 h-5 w-5" /> Ingredientes (Puro Veneno do Bem)
+              <Leaf className="mr-2 h-5 w-5" /> Ingredientes (Pura Natureza)
             </h4>
             <ul className="list-none text-sm text-muted-foreground space-y-1 pl-1">
               {product.ingredients.map((ing, idx) => (
@@ -92,7 +91,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         
         <div className="mb-5">
             <h4 className="font-headline text-xl uppercase text-secondary mb-2 flex items-center">
-                <Info className="mr-2 h-5 w-5" /> Sabor & Sugestões (Pra Botar Fogo!)
+                <Info className="mr-2 h-5 w-5" /> Sabor & Sugestões
             </h4>
             {product.heatLevel && (
               <div className="flex items-center gap-2 mb-2">
@@ -104,18 +103,18 @@ const ProductCard = ({ product }: { product: Product }) => {
                     style={{animationDelay: `${i * 100}ms`}}
                   />
                 ))}
-                 <span className="text-xs text-muted-foreground">(Use com moderação... ou não, a vida é sua!)</span>
+                 <span className="text-xs text-muted-foreground">(Para paladares aventureiros!)</span>
               </div>
             )}
             {product.flavorProfile && (
-                <p className="text-sm text-muted-foreground mb-1"><strong className="text-foreground">Como é o sabor?</strong> {product.flavorProfile}</p>
+                <p className="text-sm text-muted-foreground mb-1"><strong className="text-foreground">Perfil de Sabor:</strong> {product.flavorProfile}</p>
             )}
             {product.usageSuggestions && (
                 <>
-                    <p className="text-sm font-medium text-foreground mt-3 mb-1">Onde usar pra brilhar (e fazer chorar de alegria):</p>
+                    <p className="text-sm font-medium text-foreground mt-3 mb-1">Sugestões de Uso:</p>
                     <ul className="list-disc list-inside text-sm text-muted-foreground space-y-0.5">
                         {product.usageSuggestions.slice(0, 3).map((sug, idx) => <li key={idx}>{sug}</li>)}
-                        {product.usageSuggestions.length > 3 && <li>E onde mais sua imaginação (e coragem) permitir!</li>}
+                        {product.usageSuggestions.length > 3 && <li>E muito mais!</li>}
                     </ul>
                 </>
             )}
@@ -124,7 +123,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         {product.allergens && (
           <div className="mb-4">
             <h4 className="font-headline text-xl uppercase text-secondary mb-2 flex items-center">
-              <PackageOpen className="mr-2 h-5 w-5" /> Bom Pra Geral (Até Pros Frescos)
+              <PackageOpen className="mr-2 h-5 w-5" /> Informações Adicionais
             </h4>
             <div className="flex flex-wrap gap-2">
               {product.allergens.map(allergen => (
@@ -137,7 +136,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         )}
 
         <p className="font-body text-3xl font-semibold text-secondary mt-8 text-center">
-          R$ {product.price.toFixed(2).replace('.', ',')} <span className="text-lg text-muted-foreground">/ 150ml de pura ousadia</span>
+          R$ {product.price.toFixed(2).replace('.', ',')} <span className="text-lg text-muted-foreground">/ 150ml de pura experiência</span>
         </p>
       </CardContent>
       <CardFooter className="p-5 md:p-7 mt-2 animate-in fade-in slide-in-from-bottom-5 duration-500 delay-200">
@@ -147,7 +146,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           size="lg"
         >
           <ShoppingCart className="mr-2 h-5 w-5" />
-          Adicionar ao Carrinho (Se tiver coragem!)
+          Adicionar ao Carrinho
         </Button>
       </CardFooter>
     </Card>
@@ -162,7 +161,7 @@ const ProductsSection = () => {
           <span style={{color: 'hsl(var(--secondary))'}}>Conheça o</span> <span className="text-primary">Mango Magma</span>
         </h2>
         <div className="flex justify-center">
-          {productsList.map((product) => ( // Removido index não utilizado
+          {productsList.map((product) => ( 
             <div key={product.id} className="animate-in fade-in slide-in-from-bottom-12 duration-700 delay-200">
               <ProductCard product={product} />
             </div>
@@ -170,7 +169,7 @@ const ProductsSection = () => {
         </div>
         <div className="mt-16 text-center animate-in fade-in slide-in-from-bottom-10 duration-700 delay-400">
             <p className="text-md text-muted-foreground max-w-2xl mx-auto">
-                <strong>Detalhes Importantes (pra não dizer que não avisei):</strong> Conteúdo líquido: 150ml. Validade: 12 meses (se durar tudo isso, né?). Após aberto, conserve na geladeira e mande ver em até 60 dias. Produzido em pequenos lotes, com amor e uma pitada de maldade (no bom sentido!).
+                <strong>Detalhes Importantes:</strong> Conteúdo líquido: 150ml. Validade: 12 meses. Após aberto, conserve na geladeira e consuma em até 60 dias. Produzido em pequenos lotes com ingredientes selecionados.
             </p>
         </div>
       </div>

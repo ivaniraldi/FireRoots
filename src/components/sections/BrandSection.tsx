@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
-import { Sparkles, Leaf, MapPin, HeartHandshake } from 'lucide-react'; // Adicionado HeartHandshake
-import Link from 'next/link'; // Adicionado a importação do Link
+import { Sparkles, Leaf, MapPin, HeartHandshake } from 'lucide-react';
+import Link from 'next/link';
 
 const BrandSection = () => {
   return (
@@ -10,23 +10,23 @@ const BrandSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-in fade-in slide-in-from-right-10 duration-700 order-last md:order-first">
             <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
-              <span style={{color: 'hsl(var(--secondary))'}}>Nossas Raízes</span> <span className="text-primary">de Fogo</span>
+              <span style={{color: 'hsl(var(--secondary))'}}>Nossas Raízes,</span> <span className="text-primary">Nossa Essência</span>
             </h2>
             <p className="font-body text-lg text-muted-foreground mb-6 leading-relaxed">
-              A Fireroots nasceu daquela paixão bem brasileira por sabores que dão um chega pra lá na mesmice. Acreditamos que pimenta não é só pra arder, é pra despertar, pra dar aquele "tchans" na vida. Usamos ingredientes de verdade, com um toque artesanal que faz toda a diferença (e talvez te faça chorar um pouquinho, de alegria, claro!).
+              A Fireroots nasceu da paixão brasileira por sabores autênticos e experiências marcantes. Acreditamos que a pimenta é mais que ardência: é um despertar de sensações. Utilizamos ingredientes de verdade, com um processo artesanal que valoriza cada detalhe.
             </p>
             <div className="border-l-4 border-secondary pl-6 py-3 mb-8 bg-background/30 rounded-r-lg animate-in fade-in slide-in-from-left-5 duration-500 delay-200">
               <h3 className="font-headline text-2xl text-secondary uppercase mb-2 flex items-center">
-                <Sparkles className="w-6 h-6 mr-2 text-secondary" /> Nossa Missão (Quase Secreta)
+                <Sparkles className="w-6 h-6 mr-2 text-secondary" /> Nossa Missão
               </h3>
               <p className="font-body text-xl italic text-foreground">
-                &quot;Criar sabores que botam pra quebrar, 100% naturais e com aquele jeitinho brasileiro que conquista até coração de pedra (ou paladar de alface)!&quot;
+                &quot;Criar sabores que inspiram, 100% naturais e com a alma brasileira em cada gota!&quot;
               </p>
             </div>
             <div className="mt-8 space-y-4 text-muted-foreground">
-              <p className="flex items-start animate-in fade-in slide-in-from-bottom-5 duration-500 delay-300"><Leaf className="w-5 h-5 mr-2 mt-1 text-secondary flex-shrink-0" /> A Fireroots é mais que uma marca; é uma celebração da intensidade e da zoeira dos sabores tropicais. Caçamos os ingredientes mais puros e as pimentas mais invocadas pra criar paradas únicas, tipo o nosso Mango Magma - um elixir artesanal, feito em pequenos lotes pra garantir que cada gota seja uma lenda (ou um meme).</p>
-              <p className="flex items-start animate-in fade-in slide-in-from-bottom-5 duration-500 delay-400"><MapPin className="w-5 h-5 mr-2 mt-1 text-secondary flex-shrink-0" /> Cada frasco é uma homenagem à nossa terra, ao fogo que mora na gente e à coragem de quem encara uma boa pimenta com um sorriso no rosto (e um copo de água na mão). Valorizamos o que é natural, o autêntico e o sabor que conta história.</p>
-               <p className="flex items-start animate-in fade-in slide-in-from-bottom-5 duration-500 delay-500"><HeartHandshake className="w-5 h-5 mr-2 mt-1 text-secondary flex-shrink-0" /> Quer colar com a gente? Se você é influencer, tem uma marca daora ou só quer trocar uma ideia sobre como botar mais fogo no mundo, <Link href="/parcerias" className="text-secondary hover:text-primary underline ml-1">chega mais na página de parcerias!</Link></p>
+              <p className="flex items-start animate-in fade-in slide-in-from-bottom-5 duration-500 delay-300"><Leaf className="w-5 h-5 mr-2 mt-1 text-secondary flex-shrink-0" /> A Fireroots é uma celebração da intensidade e riqueza dos sabores tropicais. Selecionamos os melhores ingredientes e pimentas especiais para criar produtos únicos, como nosso Mango Magma - um molho artesanal, produzido em pequenos lotes para garantir a máxima qualidade e sabor.</p>
+              <p className="flex items-start animate-in fade-in slide-in-from-bottom-5 duration-500 delay-400"><MapPin className="w-5 h-5 mr-2 mt-1 text-secondary flex-shrink-0" /> Cada frasco é uma homenagem à nossa terra e à coragem de quem aprecia uma boa pimenta. Valorizamos o natural, o autêntico e o sabor que conta uma história.</p>
+               <p className="flex items-start animate-in fade-in slide-in-from-bottom-5 duration-500 delay-500"><HeartHandshake className="w-5 h-5 mr-2 mt-1 text-secondary flex-shrink-0" /> Interessado em parcerias? Se você é influencer, tem uma marca alinhada com nossos valores ou quer colaborar, <Link href="/parcerias" className="text-secondary hover:text-primary underline ml-1">visite nossa página de parcerias!</Link></p>
             </div>
           </div>
           <div className="animate-in fade-in slide-in-from-left-10 duration-700 order-first md:order-last">
