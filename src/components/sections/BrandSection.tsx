@@ -31,7 +31,7 @@ const BrandSection = () => {
           </div>
           <div className="animate-in fade-in slide-in-from-left-10 duration-700 order-first md:order-last flex justify-center items-center">
             <video 
-              src="https://placehold.co/281x500.mp4" // Substitua pelo caminho do seu vídeo real
+              src="https://i.imgur.com/es0kOV6.mp4" 
               width="281" 
               height="500" 
               autoPlay 

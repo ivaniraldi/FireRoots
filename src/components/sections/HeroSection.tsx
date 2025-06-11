@@ -14,14 +14,12 @@ const HeroSection = () => {
           muted
           playsInline // Importante para mobile
           className="w-full h-full object-cover opacity-40"
-          poster="/videos/hero-poster.jpg" // Poster para carregar antes do vídeo
+          poster="https://placehold.co/1920x1080.png" // Poster para carregar antes do vídeo
           data-ai-hint="fogo manga pimenta explosao"
         >
           <source src="https://i.imgur.com/ZuJ4WZO.mp4" type="video/mp4" />
           Seu navegador não suporta o elemento de vídeo.
         </video>
-        {/* Overlay escuro sobre o vídeo para melhor contraste do texto, se necessário */}
-        {/* <div className="absolute inset-0 bg-black/30"></div> */}
       </div>
 
       {/* Imagem do Produto - Atrás do texto, acima do vídeo */}
@@ -31,7 +29,7 @@ const HeroSection = () => {
           alt="Garrafa do molho de pimenta artesanal Mango Magma 150ml, 100% natural e picante da Fireroots"
           width={300} 
           height={300}
-          className="opacity-90 transform transition-transform hover:scale-105 duration-300"
+          className="opacity-90 transform transition-transform hover:scale-105 -translate-y-12 md:-translate-y-10" // Movida um pouco para cima
           data-ai-hint="mango magma garrafa natural"
           priority
         />
