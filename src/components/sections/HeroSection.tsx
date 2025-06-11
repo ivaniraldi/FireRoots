@@ -9,12 +9,13 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <Image
           src="https://placehold.co/1920x1080.png"
-          alt="Molho Mango Magma em ambiente tropical com chamas"
+          alt="Molho de pimenta Mango Magma em ambiente tropical com mangas e pimentas Scorpion em chamas"
           layout="fill"
           objectFit="cover"
           quality={80}
           className="opacity-30"
-          data-ai-hint="hot sauce mango flame"
+          data-ai-hint="molho manga pimenta fogo"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background"></div>
       </div>
@@ -23,27 +24,27 @@ const HeroSection = () => {
         <div className="mb-8 animate-in fade-in slide-in-from-top-8 duration-1000">
           <Image
             src="https://placehold.co/400x400.png"
-            alt="Garrafa do molho Mango Magma"
+            alt="Garrafa do molho de pimenta Mango Magma 150ml"
             width={300}
             height={300}
             className="rounded-lg shadow-2xl mx-auto transform transition-transform hover:scale-105 duration-300"
-            data-ai-hint="hot sauce bottle"
+            data-ai-hint="mango magma garrafa"
             priority
           />
         </div>
         
         <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl uppercase text-primary mb-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
-          Sabor tropical. Fogo real.
+          Mango Magma: Sabor Tropical, Fogo Real.
         </h1>
         <p className="font-body text-lg md:text-xl text-foreground max-w-xl mb-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400">
-          Molhos artesanais com ingredientes selecionados. Para quem tem coragem.
+          Nosso molho artesanal de manga com pimenta Scorpion, agora em garrafas de 150ml. Para quem tem coragem de encarar o sabor intenso.
         </p>
         <Button 
           size="lg" 
           className="font-headline uppercase text-lg py-6 px-10 bg-primary text-primary-foreground hover:bg-primary/90 transform transition-transform hover:scale-105 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600"
           asChild
         >
-          <Link href="/#produtos">Conheça os molhos</Link>
+          <Link href="/#produtos">Quero o Mango Magma</Link>
         </Button>
       </div>
     </section>

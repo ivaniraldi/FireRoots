@@ -7,8 +7,9 @@ import Footer from '@/components/layout/Footer';
 import { CartProvider } from '@/context/CartContext';
 
 export const metadata: Metadata = {
-  title: 'Fireroots - Sabor Tropical, Fogo Real',
-  description: 'Molhos artesanais ultra picantes. Começando com Mango Magma.',
+  title: 'Mango Magma - Fireroots: Molho de Pimenta Artesanal Ultra Picante',
+  description: 'Experimente o Mango Magma, nosso molho de pimenta artesanal ultra picante com manga e pimenta Scorpion. Garrafa de 150ml. Sabor tropical, fogo real. Compre já!',
+  keywords: 'molho de pimenta, mango magma, fireroots, artesanal, picante, ultra picante, manga, scorpion, comprar molho de pimenta',
 };
 
 export default function RootLayout({

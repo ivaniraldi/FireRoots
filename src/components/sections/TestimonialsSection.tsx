@@ -1,3 +1,4 @@
+
 import { generateMangoMagmaTestimonials, type GenerateMangoMagmaTestimonialsOutput } from '@/ai/flows/generate-testimonials';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -10,7 +11,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: GenerateMangoMag
     <Card className="bg-card border-border shadow-lg transform transition-transform hover:scale-105 duration-300 flex flex-col h-full">
       <CardHeader className="flex flex-row items-center gap-4 pb-2">
         <Avatar>
-          <AvatarImage src={`https://placehold.co/100x100.png?text=${initials}`} alt={`Cliente ${index + 1}`} data-ai-hint="person portrait" />
+          <AvatarImage src={`https://placehold.co/100x100.png?text=${initials}`} alt={`Foto do Cliente ${index + 1} que provou Mango Magma`} data-ai-hint="pessoa retrato" />
           <AvatarFallback>{initials}</AvatarFallback>
         </Avatar>
         <div>
@@ -21,8 +22,8 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: GenerateMangoMag
       <CardContent className="flex-grow">
         <p className="text-foreground italic mb-3">&quot;{testimonial.text}&quot;</p>
         <div className="text-sm space-y-1 mt-2">
-          <p><strong className="text-accent">Sabor:</strong> {testimonial.flavorProfile}</p>
-          <p><strong className="text-primary">Picância:</strong> {testimonial.heatLevel}</p>
+          <p><strong className="text-accent">Sabor Percebido:</strong> {testimonial.flavorProfile}</p>
+          <p><strong className="text-primary">Nível de Picância:</strong> {testimonial.heatLevel}</p>
         </div>
       </CardContent>
       <CardFooter>
@@ -30,6 +31,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: GenerateMangoMag
           {Array.from({ length: 5 }).map((_, i) => (
             <Flame key={i} className={`w-4 h-4 ${i < 4 ? 'text-primary fill-primary' : 'text-muted-foreground/30'}`} />
           ))}
+          <span className="ml-2 text-xs text-muted-foreground">Avaliação do Cliente</span>
         </div>
       </CardFooter>
     </Card>
@@ -43,15 +45,14 @@ const TestimonialsSection = async () => {
   try {
     testimonialsData = await generateMangoMagmaTestimonials({ numberOfTestimonials: 3 });
   } catch (error) {
-    console.error("Failed to load testimonials:", error);
+    console.error("Falha ao carregar depoimentos:", error);
     errorLoadingTestimonials = true;
   }
 
-  // Fallback testimonials if AI fails
   const fallbackTestimonials: GenerateMangoMagmaTestimonialsOutput['testimonials'] = [
-    { text: "Nunca provei algo tão intenso. Estou viciado!", sentiment: "Extasiado", flavorProfile: "Doce e cítrico com um toque defumado.", heatLevel: "Explosão de calor intenso e duradouro." },
-    { text: "É fogo na boca com gosto de paraíso. Perfeito equilíbrio!", sentiment: "Muito Positivo", flavorProfile: "Manga madura com notas herbais.", heatLevel: "Picância forte que cresce gradualmente." },
-    { text: "Adiciona um toque especial em tudo! Recomendo.", sentiment: "Positivo", flavorProfile: "Refrescante e levemente adocicado.", heatLevel: "Calor agradável que não domina o sabor." },
+    { text: "Nunca provei algo tão intenso e saboroso. O Mango Magma é incrível!", sentiment: "Extasiado", flavorProfile: "Doce, cítrico com um toque defumado delicioso.", heatLevel: "Explosão de calor intenso e muito duradouro." },
+    { text: "É fogo na boca com gosto de paraíso tropical. Perfeito equilíbrio entre manga e pimenta!", sentiment: "Muito Positivo", flavorProfile: "Manga madura suculenta com notas herbais complexas.", heatLevel: "Picância forte que cresce gradualmente e permanece." },
+    { text: "Adiciona um toque especial e picante em tudo! Recomendo demais o Mango Magma.", sentiment: "Positivo", flavorProfile: "Refrescante e levemente adocicado, com a manga bem presente.", heatLevel: "Calor agradável que não domina o sabor, perfeito para o dia a dia." },
   ];
 
   const testimonialsToDisplay = (testimonialsData?.testimonials.length ?? 0) > 0 
@@ -62,10 +63,10 @@ const TestimonialsSection = async () => {
     <section className="py-16 md:py-24 bg-background text-foreground">
       <div className="container mx-auto px-4 md:px-8">
         <h2 className="font-headline text-4xl md:text-5xl uppercase text-center text-primary mb-4">
-          O que dizem do Mango Magma?
+          O Que Dizem do Mango Magma?
         </h2>
         <p className="font-body text-lg text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Reações reais (ou quase) de quem se atreveu a provar.
+          Reações reais (ou quase) de quem se atreveu a provar nosso molho de manga com pimenta Scorpion.
         </p>
         
         {errorLoadingTestimonials && testimonialsToDisplay === fallbackTestimonials && (
@@ -82,10 +83,10 @@ const TestimonialsSection = async () => {
 
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
-            { src: "https://placehold.co/300x400.png", alt: "Pessoa reagindo ao molho picante", hint: "surprised face" },
-            { src: "https://placehold.co/300x400.png", alt: "Pessoa suando ao provar o molho", hint: "sweating spicy" },
-            { src: "https://placehold.co/300x400.png", alt: "Pessoa emocionada com o sabor", hint: "emotional food" },
-            { src: "https://placehold.co/300x400.png", alt: "Pessoa com expressão de 'fogo'", hint: "mouth fire" },
+            { src: "https://placehold.co/300x400.png", alt: "Pessoa com expressão surpresa ao provar molho picante", hint: "rosto surpreso picante" },
+            { src: "https://placehold.co/300x400.png", alt: "Pessoa suando ao experimentar o molho Mango Magma", hint: "suando pimenta" },
+            { src: "https://placehold.co/300x400.png", alt: "Pessoa emocionada com o sabor intenso do molho", hint: "comida emocionante sabor" },
+            { src: "https://placehold.co/300x400.png", alt: "Pessoa com expressão de 'fogo na boca' após provar o molho", hint: "boca fogo pimenta" },
           ].map((item, index) => (
             <div key={index} className="rounded-lg overflow-hidden shadow-lg animate-in fade-in zoom-in-90 duration-700" style={{animationDelay: `${(testimonialsToDisplay.length + index) * 150}ms`}}>
               <Image

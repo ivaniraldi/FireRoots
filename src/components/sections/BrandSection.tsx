@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 
 const BrandSection = () => {
@@ -10,27 +11,27 @@ const BrandSection = () => {
               Nossas Raízes de Fogo
             </h2>
             <p className="font-body text-lg text-muted-foreground mb-6 leading-relaxed">
-              Nascemos das raízes. Criamos sabores com fogo. Acreditamos que o picante é um estilo de vida.
+              Nascemos das raízes. Criamos sabores com fogo e paixão. Acreditamos que o picante é um estilo de vida, uma experiência que desperta os sentidos.
             </p>
             <div className="border-l-4 border-accent pl-6 py-2 mb-8">
               <h3 className="font-headline text-2xl text-accent uppercase mb-2">Nossa Missão</h3>
               <p className="font-body text-xl italic text-foreground">
-                &quot;Raízes ardentes, sabores selvagens.&quot;
+                &quot;Raízes ardentes, sabores selvagens e inesquecíveis.&quot;
               </p>
             </div>
             <div className="mt-8 space-y-3 text-muted-foreground">
-              <p>A Fireroots é mais que uma marca de molhos; é uma celebração da intensidade e da autenticidade. Buscamos os ingredientes mais puros e as pimentas mais potentes para criar experiências de sabor inesquecíveis.</p>
-              <p>Cada gota é uma homenagem à terra, ao fogo e à coragem de quem enfrenta o calor.</p>
+              <p>A Fireroots é mais que uma marca de molhos; é uma celebração da intensidade e da autenticidade dos sabores tropicais. Buscamos os ingredientes mais puros e as pimentas mais potentes para criar experiências de sabor únicas, como o nosso Mango Magma.</p>
+              <p>Cada gota é uma homenagem à terra, ao fogo e à coragem de quem enfrenta o calor com prazer.</p>
             </div>
           </div>
           <div className="animate-in fade-in slide-in-from-left-8 duration-700 order-first md:order-last">
             <Image
               src="https://placehold.co/600x500.png"
-              alt="Representação da marca Fireroots com elementos de raízes e fogo"
+              alt="Representação da marca Fireroots com elementos abstratos de raízes e fogo, simbolizando a origem dos sabores picantes"
               width={600}
               height={500}
               className="rounded-lg shadow-xl object-cover"
-              data-ai-hint="roots fire abstract"
+              data-ai-hint="raizes fogo abstrato marca"
             />
           </div>
         </div>

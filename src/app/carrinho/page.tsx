@@ -20,7 +20,7 @@ const CartProductCard = ({ item }: { item: CartItem }) => {
       removeFromCart(item.id);
       toast({
         title: "Produto removido",
-        description: `${item.name} foi removido do carrinho.`,
+        description: `${item.name} (150ml) foi removido do carrinho.`,
         variant: "destructive"
       });
     } else {
@@ -32,7 +32,7 @@ const CartProductCard = ({ item }: { item: CartItem }) => {
     removeFromCart(item.id);
     toast({
       title: "Produto removido",
-      description: `${item.name} foi removido do carrinho.`,
+      description: `${item.name} (150ml) foi removido do carrinho.`,
       variant: "destructive"
     });
   };
@@ -41,19 +41,19 @@ const CartProductCard = ({ item }: { item: CartItem }) => {
     <Card className="flex flex-col md:flex-row items-center gap-4 p-4 bg-card border-border shadow-sm">
       <Image
         src={item.image}
-        alt={item.name}
+        alt={`Garrafa do molho ${item.name} 150ml`}
         width={100}
         height={100}
         className="rounded-md object-cover w-24 h-24 md:w-32 md:h-32"
-        data-ai-hint={item.dataAiHint || "product image"}
+        data-ai-hint={item.dataAiHint || "imagem produto"}
       />
       <div className="flex-grow">
-        <h3 className="text-lg font-semibold text-primary">{item.name}</h3>
+        <h3 className="text-lg font-semibold text-primary">{item.name} <span className="text-sm text-muted-foreground">(150ml)</span></h3>
         <p className="text-sm text-muted-foreground">Preço Unitário: R$ {item.price.toFixed(2).replace('.', ',')}</p>
         <p className="text-md font-medium">Subtotal: R$ {(item.price * item.quantity).toFixed(2).replace('.', ',')}</p>
       </div>
       <div className="flex items-center gap-2">
-        <Button variant="ghost" size="icon" onClick={() => handleQuantityChange(item.quantity - 1)}>
+        <Button variant="ghost" size="icon" onClick={() => handleQuantityChange(item.quantity - 1)} aria-label={`Diminuir quantidade de ${item.name}`}>
           <MinusSquare className="h-5 w-5" />
         </Button>
         <Input
@@ -62,12 +62,13 @@ const CartProductCard = ({ item }: { item: CartItem }) => {
           onChange={(e) => handleQuantityChange(parseInt(e.target.value, 10) || 1)}
           className="w-16 text-center h-9"
           min="1"
+          aria-label={`Quantidade de ${item.name}`}
         />
-        <Button variant="ghost" size="icon" onClick={() => handleQuantityChange(item.quantity + 1)}>
+        <Button variant="ghost" size="icon" onClick={() => handleQuantityChange(item.quantity + 1)} aria-label={`Aumentar quantidade de ${item.name}`}>
           <PlusSquare className="h-5 w-5" />
         </Button>
       </div>
-      <Button variant="ghost" size="icon" onClick={handleRemove} className="text-destructive hover:text-destructive/80">
+      <Button variant="ghost" size="icon" onClick={handleRemove} className="text-destructive hover:text-destructive/80" aria-label={`Remover ${item.name} do carrinho`}>
         <Trash2 className="h-5 w-5" />
         <span className="sr-only">Remover item</span>
       </Button>
@@ -91,7 +92,7 @@ export default function CartPage() {
     // Placeholder for actual checkout logic
     toast({
       title: "Pedido finalizado!",
-      description: "Obrigado por comprar na Fireroots! (Esta é uma simulação)",
+      description: "Obrigado por comprar na Fireroots! Em breve seu Mango Magma estará a caminho. (Esta é uma simulação)",
     });
     clearCart();
   };
@@ -105,10 +106,10 @@ export default function CartPage() {
           Seu carrinho está vazio
         </h1>
         <p className="font-body text-lg text-muted-foreground mb-8">
-          Parece que você ainda não adicionou nenhum produto. Que tal explorar nossos molhos?
+          Parece que você ainda não adicionou nosso delicioso Mango Magma. Que tal experimentar?
         </p>
         <Button size="lg" asChild className="font-headline uppercase">
-          <Link href="/#produtos">Ver Produtos</Link>
+          <Link href="/#produtos">Ver o Mango Magma</Link>
         </Button>
       </div>
     );

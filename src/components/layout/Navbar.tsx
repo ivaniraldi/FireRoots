@@ -12,7 +12,7 @@ import { Badge } from '@/components/ui/badge';
 
 const navItems = [
   { label: 'Início', href: '/' },
-  { label: 'Produtos', href: '/#produtos' },
+  { label: 'O Molho', href: '/#produtos' }, // Alterado de Produtos para O Molho
   { label: 'Sobre', href: '/#sobre-marca' },
   { label: 'Contato', href: '/#contato' },
 ];
@@ -45,11 +45,10 @@ const Navbar = () => {
         key={item.label}
         variant="ghost"
         asChild
-        className={`font-body text-sm ${isSheet ? 'w-full justify-start' : ''} ${item.soon ? 'text-muted-foreground cursor-not-allowed' : 'hover:bg-accent/50 hover:text-accent-foreground'}`}
+        className={`font-body text-sm ${isSheet ? 'w-full justify-start' : ''} hover:bg-accent/50 hover:text-accent-foreground`}
       >
-        <Link href={item.soon ? '#' : item.href}>
+        <Link href={item.href}>
           {item.label}
-          {item.soon && <span className="ml-2 text-xs opacity-70">(em breve)</span>}
         </Link>
       </Button>
     ));
@@ -64,11 +63,11 @@ const Navbar = () => {
 
         {isMobile ? (
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" asChild>
+            <Button variant="ghost" size="icon" asChild className="relative">
               <Link href="/carrinho" aria-label="Carrinho de compras">
                 <ShoppingCart className="h-6 w-6" />
                 {totalItems > 0 && (
-                  <Badge variant="destructive" className="absolute top-1 right-1 h-5 w-5 p-0 flex items-center justify-center text-xs">
+                  <Badge variant="destructive" className="absolute top-0 right-0 h-5 w-5 p-0 flex items-center justify-center text-xs translate-x-1/3 -translate-y-1/3">
                     {totalItems}
                   </Badge>
                 )}
