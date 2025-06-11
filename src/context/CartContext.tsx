@@ -12,6 +12,10 @@ export interface Product {
   price: number;
   heatLevel?: number;
   dataAiHint?: string;
+  ingredients?: string[];
+  flavorProfile?: string;
+  usageSuggestions?: string[];
+  allergens?: string[];
 }
 
 export interface CartItem extends Product {

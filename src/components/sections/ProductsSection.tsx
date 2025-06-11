@@ -1,22 +1,39 @@
 
 'use client';
 import Image from 'next/image';
-import { Flame, ShoppingCart } from 'lucide-react';
+import { Flame, ShoppingCart, Leaf, CheckCircle, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import type { Product } from '@/context/CartContext';
 import { useCart } from '@/context/CartContext';
 import { useToast } from '@/hooks/use-toast';
+import { Badge } from '@/components/ui/badge';
 
 const allProducts: Product[] = [
   {
     id: 'mango-magma',
     name: 'Mango Magma',
-    description: 'Feito com manga natural e pimenta Scorpion em uma garrafa de 150ml. Sem conservantes. Sabor puro, picante e real.',
+    description: 'Mango Magma é um molho artesanal ultra picante que combina a doçura natural da manga madura com o calor extremo da pimenta Scorpion. Formulado para quem busca uma experiência sensorial intensa, sem concessões de sabor.',
     image: 'https://placehold.co/600x700.png',
     price: 24.99,
     heatLevel: 5,
-    dataAiHint: 'mango magma molho pimenta',
+    dataAiHint: 'mango magma molho pimenta natural artesanal',
+    ingredients: [
+      'Polpa de manga (manga)',
+      'Pimenta Scorpion',
+      'Sal marinho',
+      'Açúcar de cana',
+      'Nada além disso: sem corantes, sem conservantes artificiais e sem aditivos químicos.',
+    ],
+    flavorProfile: 'Início levemente adocicado pela manga, seguido de ardência progressiva que perdura no paladar.',
+    usageSuggestions: [
+      'Acompanhamento em carnes grelhadas, hambúrgueres e frango.',
+      'Finalização de tacos, burritos e bowls mexicanos.',
+      'Temperar petiscos: batatas fritas, nachos, espetinhos.',
+      'Marinadas rápidas: misturar com azeite e utilizar em churrascos.',
+      '“Shot” de coragem: uma dose direta antes do prato principal.',
+    ],
+    allergens: ['Sem Glúten', 'Sem Lactose', 'Vegano', 'Sem Soja'],
   },
   {
     id: 'pineapple-inferno',
@@ -53,40 +70,91 @@ const ProductCard = ({ product }: { product: Product }) => {
   };
 
   return (
-    <Card className="bg-card border-border shadow-lg flex flex-col h-full transform transition-transform hover:scale-105 duration-300 max-w-md mx-auto">
+    <Card className="bg-card border-border shadow-lg flex flex-col h-full transform transition-transform hover:scale-105 duration-300 max-w-lg mx-auto">
       <CardHeader className="p-0">
         <Image
           src={product.image}
-          alt={`Molho de Pimenta ${product.name} Artesanal 150ml`}
+          alt={`Molho de Pimenta ${product.name} Artesanal 150ml com manga e pimenta Scorpion`}
           width={600}
           height={400}
           className="rounded-t-lg object-cover w-full h-64 md:h-80"
           data-ai-hint={product.dataAiHint}
         />
       </CardHeader>
-      <CardContent className="flex-grow pt-6">
-        <CardTitle className="font-headline text-3xl md:text-4xl uppercase text-primary mb-3">
-          {product.name}
+      <CardContent className="flex-grow pt-6 px-4 md:px-6">
+        <CardTitle className="font-headline text-3xl md:text-4xl uppercase text-primary mb-2">
+          {product.name} <span className="text-lg font-body text-muted-foreground">(150ml)</span>
         </CardTitle>
-        <p className="font-body text-md text-muted-foreground mb-4 leading-relaxed">
+        
+        <p className="font-body text-md text-foreground mb-4 leading-relaxed">
           {product.description}
         </p>
-        {product.heatLevel && (
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-sm font-medium text-foreground">Nível de Picância:</span>
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Flame
-                key={i}
-                className={`w-5 h-5 ${i < product.heatLevel! ? 'text-primary fill-primary' : 'text-muted-foreground/30'}`}
-              />
-            ))}
+
+        {product.ingredients && (
+          <div className="mb-4">
+            <h4 className="font-headline text-lg uppercase text-accent mb-2 flex items-center">
+              <Leaf className="mr-2 h-5 w-5" /> Ingredientes (100% Naturais)
+            </h4>
+            <ul className="list-none text-sm text-muted-foreground space-y-1">
+              {product.ingredients.map((ing, idx) => (
+                <li key={idx} className={idx === product.ingredients!.length - 1 ? 'italic' : ''}>
+                  {ing}
+                </li>
+              ))}
+            </ul>
           </div>
         )}
-        <p className="font-body text-2xl font-semibold text-accent">
+        
+        <div className="mb-4">
+            <h4 className="font-headline text-lg uppercase text-accent mb-2 flex items-center">
+                <Info className="mr-2 h-5 w-5" /> Sabor & Uso
+            </h4>
+            {product.heatLevel && (
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-sm font-medium text-foreground">Nível de Picância:</span>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Flame
+                    key={i}
+                    className={`w-5 h-5 ${i < product.heatLevel! ? 'text-primary fill-primary' : 'text-muted-foreground/30'}`}
+                  />
+                ))}
+              </div>
+            )}
+            {product.flavorProfile && (
+                <p className="text-sm text-muted-foreground mb-1"><strong className="text-foreground">Notas de sabor:</strong> {product.flavorProfile}</p>
+            )}
+            {product.usageSuggestions && (
+                <>
+                    <p className="text-sm font-medium text-foreground mt-2 mb-1">Sugestões de uso:</p>
+                    <ul className="list-disc list-inside text-sm text-muted-foreground space-y-0.5">
+                        {product.usageSuggestions.slice(0, 3).map((sug, idx) => <li key={idx}>{sug}</li>)}
+                        {product.usageSuggestions.length > 3 && <li>E muito mais!</li>}
+                    </ul>
+                </>
+            )}
+        </div>
+
+
+        {product.allergens && (
+          <div className="mb-4">
+            <h4 className="font-headline text-lg uppercase text-accent mb-2 flex items-center">
+              <CheckCircle className="mr-2 h-5 w-5" /> Ideal Para Você
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {product.allergens.map(allergen => (
+                <Badge key={allergen} variant="secondary" className="text-xs bg-muted hover:bg-muted/80 text-muted-foreground">
+                  {allergen}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <p className="font-body text-2xl font-semibold text-accent mt-6">
           R$ {product.price.toFixed(2).replace('.', ',')} / 150ml
         </p>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="p-4 md:p-6">
         <Button className="w-full font-headline uppercase text-lg py-3" onClick={handleAddToCart}>
           <ShoppingCart className="mr-2 h-5 w-5" />
           Adicionar ao Carrinho
@@ -109,6 +177,11 @@ const ProductsSection = () => {
               <ProductCard product={product} />
             </div>
           ))}
+        </div>
+        <div className="mt-12 text-center">
+            <p className="text-sm text-muted-foreground">
+                <strong>Informações Adicionais:</strong> Conteúdo líquido: 150ml. Validade: 12 meses (vide rótulo). Após aberto, refrigerar e consumir em até 60 dias. Produzido em pequenos lotes para máxima qualidade.
+            </p>
         </div>
       </div>
     </section>
