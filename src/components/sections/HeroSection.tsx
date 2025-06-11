@@ -13,13 +13,14 @@ const HeroSection = () => {
           loop
           muted
           playsInline // Importante para mobile
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover" // Removido opacity-40
           poster="https://placehold.co/1920x1080.png" // Poster para carregar antes do vídeo
           data-ai-hint="fogo manga pimenta explosao"
         >
           <source src="https://i.imgur.com/ZuJ4WZO.mp4" type="video/mp4" />
           Seu navegador não suporta o elemento de vídeo.
         </video>
+        {/* Removido o div do gradiente que ficava aqui */}
       </div>
 
       {/* Imagem do Produto - Atrás do texto, acima do vídeo */}
@@ -36,7 +37,7 @@ const HeroSection = () => {
       </div>
 
       {/* Conteúdo da Hero Section - Texto no topo */}
-      <div className="relative z-20 p-4 md:p-8 pt-20 flex flex-col items-center"> {/* Adicionado pt-20 */}
+      <div className="relative z-20 p-4 md:p-8 pt-20 flex flex-col items-center">
         <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl uppercase mb-4 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
         <span className="text-primary">Mango Magma:</span> <span style={{color: 'hsl(var(--secondary))'}}>Sabor Tropical,</span> <span style={{color: 'hsl(var(--custom-gray))'}}>Fogo Real!</span>
         </h1>
