@@ -4,11 +4,16 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background-image: linear-gradient(to bottom, hsl(var(--background-start, var(--background))), hsl(var(--background-end)));
+  @apply text-foreground min-h-screen;
 }
 
 @layer base {
   :root {
     --background: 0 0% 10%; /* Preto Profundo #1A1A1A */
+    --background-start: 0 0% 10%; /* Início do gradiente */
+    --background-end: 0 0% 15%; /* Fim do gradiente - Cinza carvão escuro sutil */
+
     --foreground: 0 0% 97%; /* Branco Fumaça #F8F8F8 */
 
     --card: 0 0% 12%; /* Um pouco mais claro que o fundo */
@@ -20,16 +25,15 @@ body {
     --primary: 353 70% 50%; /* Vermelho Lava #D72638 */
     --primary-foreground: 0 0% 97%; /* Branco Fumaça */
 
-    --secondary: 43 98% 58%; /* Amarelo Manga #FDBA2D - Invertido com Accent para mais destaque amarelo */
+    --secondary: 43 98% 58%; /* Amarelo Manga #FDBA2D */
     --secondary-foreground: 0 0% 10%; /* Preto Profundo para texto sobre amarelo */
 
     --muted: 0 0% 25%; /* Cinza Escuro */
     --muted-foreground: 0 0% 60%; /* Cinza Mais Claro */
 
-    --accent: 353 70% 50%; /* Vermelho Lava #D72638 - Invertido com Secondary */
-    --accent-foreground: 0 0% 97%; /* Branco Fumaça */
+    --accent: 43 98% 58%; /* Amarelo Manga #FDBA2D - Mantido como amarelo para destaque */
+    --accent-foreground: 0 0% 10%; /* Preto Profundo */
     
-    /* Definindo uma nova variável para o cinza específico #C2BDC0 */
     --custom-gray: 0 0% 75.3%; /* Cinza #C2BDC0 */
 
 
@@ -62,6 +66,9 @@ body {
   .dark {
     /* Dark mode pode refinar específicos se necessário, mas :root já é escuro */
     --background: 0 0% 10%;
+    --background-start: 0 0% 10%;
+    --background-end: 0 0% 15%; /* cinza carvão escuro sutil */
+    
     --foreground: 0 0% 97%;
 
     --card: 0 0% 12%;
@@ -79,8 +86,8 @@ body {
     --muted: 0 0% 25%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 353 70% 50%;
-    --accent-foreground: 0 0% 97%;
+    --accent: 43 98% 58%;
+    --accent-foreground: 0 0% 10%;
     
     --custom-gray: 0 0% 75.3%;
 
@@ -113,6 +120,6 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    /* text-foreground e min-h-screen já estão aplicados acima */
   }
 }
