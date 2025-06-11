@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 const BrandSection = () => {
   return (
-    <section 
-      id="sobre-marca" 
+    <section
+      id="sobre-marca"
       className="py-16 md:py-24 text-foreground bg-cover bg-center"
       style={{ backgroundImage: "url('https://i.imgur.com/cYLl7Oj.gif')" }}
     >
@@ -19,7 +19,7 @@ const BrandSection = () => {
             <p className="font-body text-lg text-muted-foreground mb-6 leading-relaxed">
               A Fireroots nasceu da paixão brasileira por sabores autênticos e experiências marcantes. Acreditamos que a pimenta é mais que ardência: é um despertar de sensações. Utilizamos ingredientes de verdade, com um processo artesanal que valoriza cada detalhe.
             </p>
-            <div className="border-l-4 border-secondary pl-6 py-3 mb-8 bg-background/50 rounded-r-lg animate-in fade-in slide-in-from-left-5 duration-500 delay-200"> {/* Added bg-background/50 for readability over GIF */}
+            <div className="border-l-4 border-secondary pl-6 py-3 mb-8 bg-background/50 rounded-r-lg animate-in fade-in slide-in-from-left-5 duration-500 delay-200">
               <h3 className="font-headline text-2xl text-secondary uppercase mb-2 flex items-center">
                 <Sparkles className="w-6 h-6 mr-2 text-secondary" /> Nossa Missão
               </h3>
@@ -34,13 +34,14 @@ const BrandSection = () => {
             </div>
           </div>
           <div className="animate-in fade-in slide-in-from-left-10 duration-700 order-first md:order-last flex justify-center items-center">
-            <video 
-              src="https://i.imgur.com/es0kOV6.mp4" 
-              width="281" 
-              height="500" 
-              autoPlay 
-              loop 
-              muted 
+            <video
+              src="https://i.imgur.com/es0kOV6.mp4"
+              poster="https://placehold.co/281x500.png" // Poster para o vídeo
+              width="281"
+              height="500"
+              autoPlay
+              loop
+              muted
               playsInline
               className="rounded-xl shadow-xl object-cover transform transition-transform hover:scale-105 duration-300 max-w-full"
               data-ai-hint="producao artesanal molho pimenta ingredientes frescos"
