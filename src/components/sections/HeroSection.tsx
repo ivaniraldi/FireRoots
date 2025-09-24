@@ -1,5 +1,4 @@
 
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -18,25 +17,11 @@ const HeroSection = () => {
           muted
           playsInline // Importante para mobile
           className="w-full h-full object-cover"
-          poster="https://placehold.co/1920x1080.png" // Poster para carregar antes do vídeo
           data-ai-hint="fogo manga pimenta explosao"
         >
           <source src="https://i.imgur.com/ZuJ4WZO.mp4" type="video/mp4" />
           Seu navegador não suporta o elemento de vídeo.
         </video>
-      </div>
-
-      {/* Imagem do Produto - Atrás do texto, acima do vídeo */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-        <Image
-          src="https://i.imgur.com/HZE33hQ.png"
-          alt="Garrafa do molho de pimenta artesanal Mango Magma 150ml, 100% natural e picante da Fireroots"
-          width={280}
-          height={280}
-          className="opacity-90 transform transition-transform hover:scale-105 -translate-y-12 md:-translate-y-10"
-          data-ai-hint="mango magma garrafa natural"
-          priority
-        />
       </div>
 
       {/* Conteúdo da Hero Section - Texto no topo */}
