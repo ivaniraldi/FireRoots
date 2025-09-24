@@ -1,16 +1,22 @@
 
+'use client';
+
 import type { Metadata } from 'next';    
 import React from 'react';
 
-export const metadata: Metadata = {
-  title: 'Política de Privacidade - Fireroots',
-  description: 'Na Fireroots, sua privacidade é levada a sério. Entenda como coletamos, usamos e protegemos seus dados pessoais.',
-  keywords: 'política de privacidade fireroots, segurança de dados, proteção de dados, lgpd, termos de uso molho de pimenta',
-};
+// Metadata is best handled in server components or layout files.
+// For client components, we can set the title dynamically if needed.
+// export const metadata: Metadata = {
+//   title: 'Política de Privacidade - Fireroots',
+//   description: 'Na Fireroots, sua privacidade é levada a sério. Entenda como coletamos, usamos e protegemos seus dados pessoais.',
+//   keywords: 'política de privacidade fireroots, segurança de dados, proteção de dados, lgpd, termos de uso molho de pimenta',
+// };
 
 export default function PrivacyPolicyPage() {
   const [currentDate, setCurrentDate] = React.useState('');
+  
   React.useEffect(() => {
+    document.title = 'Política de Privacidade - Fireroots';
     setCurrentDate(new Date().toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' }));
   }, []);
 
