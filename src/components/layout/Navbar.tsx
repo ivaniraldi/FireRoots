@@ -34,7 +34,9 @@ const Navbar = () => {
         <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-8">
           <Link href="/" className="flex items-center gap-2 text-2xl font-headline uppercase">
             <Flame className="h-7 w-7" style={{ color: '#D73908' }} />
-            <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
+             <span>
+              <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
+            </span>
           </Link>
         </div>
       </header>
@@ -62,7 +64,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-8">
-        <Link href="/" className="flex items-center  text-2xl font-headline uppercase transition-transform hover:scale-105">
+        <Link href="/" className="flex items-center gap-2 text-2xl font-headline uppercase transition-transform hover:scale-105">
           <Image
             src="https://i.imgur.com/pqUvJEU.png"
             alt="Logo da Fireroots"
@@ -71,7 +73,9 @@ const Navbar = () => {
             className="rounded-full"
             
           />
-          <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
+          <span>
+            <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
+          </span>
         </Link>
 
         {isMobile ? (
@@ -97,7 +101,9 @@ const Navbar = () => {
             <SheetContent side="right" className="w-[280px] bg-card p-6">
                  <Link href="/" className="flex items-center gap-2 text-2xl font-headline uppercase mb-8">
                     <Flame className="h-7 w-7" style={{ color: '#D73908' }} />
-                    <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
+                     <span>
+                      <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
+                    </span>
                 </Link>
                 <nav className="flex flex-col gap-3">
                   {/* Pass closeSheet function here if Sheet had an internal way to close itself programmatically from SheetTrigger context */}

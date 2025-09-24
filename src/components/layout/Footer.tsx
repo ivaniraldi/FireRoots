@@ -19,7 +19,9 @@ const Footer = () => {
                 height={50}
                 className="rounded-full"
               />
-              <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
+              <span>
+                <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
+              </span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Sabor que incendeia, feito no Brasil! Molho artesanal ultra picante Mango Magma. A pimenta que faltava na sua vida.
