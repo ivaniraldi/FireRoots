@@ -6,7 +6,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { CartProvider } from '@/context/CartContext';
 // import FireParticlesLoader from '@/components/fx/FireParticlesLoader'; // Mantido comentado
-
+ 
 export const metadata: Metadata = {
   title: 'Mango Magma - Fireroots: Molho de Pimenta Artesanal Picante Nível Hard!',
   description: 'Experimente o Mango Magma da Fireroots! Molho de pimenta artesanal com manga e pimenta Scorpion. Sabor tropical com ardência de verdade (150ml). Compre já e sinta o calor!',
