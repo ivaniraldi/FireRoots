@@ -12,13 +12,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 items-start">
           <div className="animate-in fade-in slide-in-from-bottom-5 duration-500">
             <Link href="/" className="flex items-center gap-2 text-2xl font-headline uppercase text-primary mb-3 transition-transform hover:scale-105">
-              <Image
-                src="https://i.imgur.com/pqUvJEU.png"
-                alt="Logo da Fireroots"
-                width={40} // Ajuste o tamanho conforme necessário
-                height={40}
-                className="rounded-full"
-              />
               <span style={{ color: '#FDA302' }}>Fire</span><span style={{ color: 'hsl(var(--custom-gray))' }}>roots</span>
             </Link>
             <p className="text-sm text-muted-foreground">

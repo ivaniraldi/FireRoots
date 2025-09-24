@@ -56,7 +56,7 @@ const TestimonialsSection = () => {
   const fallbackTestimonials: Testimonial[] = [
     { 
       name: "Lucas 'Brasa' Costa",
-      avatarImage: "https://placehold.co/100x100.png?text=LC",
+      avatarImage: "", // Removido para usar fallback
       avatarFallback: "LC",
       text: "Maluco, que molho é esse?! O Mango Magma transformou meu churras de domingo. Ardência na medida certa e um sabor de manga que vicia. Já quero um caminhão disso!", 
       sentiment: "Apaixonado Real Oficial!", 
@@ -66,7 +66,7 @@ const TestimonialsSection = () => {
     },
     { 
       name: "Juliana 'Pimentinha' Alves",
-      avatarImage: "https://placehold.co/100x100.png?text=JA",
+      avatarImage: "", // Removido para usar fallback
       avatarFallback: "JA",
       text: "Achei que era só mais um molho picante, mas o Mango Magma me surpreendeu! É o equilíbrio perfeito entre o doce e o fogo. Recomendo pra quem tem coragem (e bom gosto)!", 
       sentiment: "Virei Fã de Carteirinha!", 
@@ -76,7 +76,7 @@ const TestimonialsSection = () => {
     },
     { 
       name: "Fernando 'Magma' Oliveira",
-      avatarImage: "https://placehold.co/100x100.png?text=FO",
+      avatarImage: "", // Removido para usar fallback
       avatarFallback: "FO",
       text: "Finalmente um molho que entrega o que promete! O Mango Magma dá aquele 'up' em qualquer prato. E o melhor: é natural. Já virou item essencial na minha cozinha.", 
       sentiment: "Experiência Incrível!", 
