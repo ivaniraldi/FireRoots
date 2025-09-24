@@ -58,7 +58,7 @@ const HeroSection = () => {
           className="font-headline uppercase text-lg py-6 px-12 bg-secondary text-secondary-foreground hover:bg-secondary/90 transform transition-transform hover:scale-105 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-600"
           asChild
         >
-          <Link href="/#produtos">Quero Esse Fogo Todo!</Link>
+          <Link href="/#produtos">Quero experimentar</Link>
         </Button>
         <p
           className="font-body text-sm mt-6 text-foreground animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-700 opacity-90"

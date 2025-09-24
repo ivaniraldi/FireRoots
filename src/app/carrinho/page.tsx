@@ -124,8 +124,8 @@ export default function CartPage() {
       return;
     }
 
-    const whatsAppPhoneNumber = "554892058069"; // Seu número de WhatsApp
-    let message = `Olá, Fireroots! 🔥 Gostaria de fazer o seguinte pedido:\n\n`;
+    const whatsAppPhoneNumber = "5548992084572"; // Seu número de WhatsApp
+    let message = `🚨 PEDIDO DE TESTE 🚨\n\nOlá, Fireroots! 🔥 Gostaria de fazer o seguinte pedido:\n\n`;
 
     items.forEach(item => {
       message += `${item.quantity}x ${item.name} (150ml) - R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}\n`;

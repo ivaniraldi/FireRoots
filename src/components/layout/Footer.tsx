@@ -38,8 +38,8 @@ const Footer = () => {
           <div className="animate-in fade-in slide-in-from-bottom-5 duration-500 delay-200">
             <h4 className="font-headline text-lg uppercase text-secondary mb-4">Manda um Salve & Segue Aí</h4>
             <p className="text-sm mb-1 text-muted-foreground">Ideia genial ou só quer bater um papo ardente?</p>
-            <a href="mailto:contato@fireroots.com.br" className="text-sm mb-3 text-muted-foreground font-semibold hover:text-secondary flex items-center gap-2">
-              <Mail size={16}/> contato@fireroots.com.br
+            <a href="mailto:contact@sykotech.com" className="text-sm mb-3 text-muted-foreground font-semibold hover:text-secondary flex items-center gap-2">
+              <Mail size={16}/> contact@sykotech.com
             </a>
             <div className="flex space-x-4 mt-3">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Fireroots" className="text-muted-foreground hover:text-secondary transition-colors transform hover:scale-110">
@@ -48,7 +48,7 @@ const Footer = () => {
               <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok da Fireroots" className="text-muted-foreground hover:text-secondary transition-colors transform hover:scale-110">
                 <TikTokIcon className="w-6 h-6" />
               </a>
-              <a href="https://wa.me/554892058069" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Fireroots" className="text-muted-foreground hover:text-secondary transition-colors transform hover:scale-110">
+              <a href="https://wa.me/5548992084572" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Fireroots" className="text-muted-foreground hover:text-secondary transition-colors transform hover:scale-110">
                 <WhatsAppIcon className="w-6 h-6" />
               </a>
             </div>
@@ -57,9 +57,9 @@ const Footer = () => {
         <div className="border-t border-border/40 pt-8 text-center animate-in fade-in duration-500 delay-300">
           <p className="font-headline text-xl uppercase text-primary mb-2">&quot;Mango Magma: O calor que te pega de jeito!&quot;</p>
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Fireroots. Todos os direitos reservados. Feito com pimenta e paixão no Brasil.
+            &copy; {new Date().getFullYear()} Sykotech. Todos os direitos reservados. Feito com pimenta e paixão no Brasil.
           </p>
-           <p className="text-xs text-muted-foreground/70 mt-2">CNPJ: XX.XXX.XXX/0001-XX - Endereço Fictício da Silva, 123 - Fogo Eterno, SP</p>
+           <p className="text-xs text-muted-foreground/70 mt-2">CNPJ: 62.249.967/0001-69 - Endereço Fictício da Silva, 123 - Fogo Eterno, SP</p>
         </div>
       </div>
     </footer>
